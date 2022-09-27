@@ -1,0 +1,91 @@
+.about {
+    padding: 1rem 3rem;
+    
+    .heading {
+        font-size: 2.5rem;
+        font-family: 'Roboto';
+        text-transform: capitalize;
+        color: #2C3639;
+        margin-bottom: none !important;
+    }
+
+    .line {
+        width: 6rem;
+        margin: 0rem 0rem 1rem;
+        border-top: none;
+        border-bottom: 5px solid#FF0063;
+    }
+
+    .introduction {
+        padding: 2rem 0rem; 
+
+        .my_img {
+            width: 23rem;
+            height: 27rem;
+            padding: 2rem;
+            // border: 5px solid #FF0063;
+            // border-radius: 100%;
+
+
+            --b: 5px;   /* thickness of the border */
+            --c: #FF0063;   /* color of the border */
+            --w: 20px;  /* width of border */
+            
+            
+            border: var(--b) solid #0000; /* space for the border */
+            --_g: #0000 90deg,var(--c) 0;
+            --_p: var(--w) var(--w) border-box no-repeat;
+            background:
+                // conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+                conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+                conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+                // conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+        }
+
+        #name {
+            color: #FF0063;
+            text-transform: capitalize;
+        }
+
+        .title span {
+            font-size: 2rem;
+            color: #2C3639;
+            letter-spacing: 0.3rem;
+            font-family: 'Roboto';
+        }
+
+    }
+
+    .para {
+        margin-top: 2rem;
+        p {
+            color: #2C3639;
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+            line-height: 35px;
+            font-family: 'Poppins';
+        }
+    } 
+
+    .action_buttons {
+        width: 20rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        button {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Poppins';
+            background: #FF0063;
+            padding: 1rem;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    
+}

@@ -8,9 +8,14 @@ const routes: Routes = [
     path: '', component: BodyComponent,
     children: [
       { path: "", redirectTo: 'home', pathMatch: "prefix" },
-      { path: 'home', 
+      { 
+        path: 'home', 
         loadChildren: 
         () => import('./pages/body/home/home.module').then(m => m.HomeModule) 
+      },
+      { 
+        path: 'about', 
+        loadChildren: () => import('./pages/body/about/about.module').then(m => m.AboutModule) 
       },
     ]
   },
