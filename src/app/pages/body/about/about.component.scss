@@ -108,9 +108,13 @@
         .skill_card {
             width: 20rem;
             padding: 1rem;
-            border: 1px solid #2C3639;
+            // border: 1px solid #2C3639;
+            border: none;
             border-radius: 10px;
             margin-bottom: 2rem;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+            background-image: linear-gradient(-225deg, #2cd8d5 0%, #6b8dd6 48%, #8e37d7 100%);
+
 
             img {
                 width: 10rem;
@@ -121,7 +125,8 @@
                 font-size: 1.5rem;
                 font-weight: 700;
                 font-family: 'Roboto';
-                color: #FF0063;
+                // color: #FF0063;
+                color: #fff;
                 padding: 2rem;
             }
 
@@ -129,13 +134,15 @@
                 font-size: 0.8rem;
                 font-family: 'Poppins';
                 line-height: 20px;
-                color: #2C3639;
+                // color: #2C3639;
+                color: #fff;
             }
 
             a {
                 display: block;
                 font-size: 1rem;
                 font-style: italic;
+                color: #FF0063;
             }
         }
     }
