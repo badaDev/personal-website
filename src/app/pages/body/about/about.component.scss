@@ -1,5 +1,5 @@
 .about {
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     
     .heading {
         font-size: 2.5rem;
@@ -84,6 +84,59 @@
             border: none;
             border-radius: 20px;
             box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .skills_heading {
+        h4{
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: 'Roboto';
+            text-align: center;
+            margin: 2rem 0;
+
+        }
+    }
+
+    .skills {
+        width: 100%;
+        margin: 3rem 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+
+        .skill_card {
+            width: 20rem;
+            padding: 1rem;
+            border: 1px solid #2C3639;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+
+            img {
+                width: 10rem;
+                height: 10rem;
+            }
+
+            .skill_name {
+                font-size: 1.5rem;
+                font-weight: 700;
+                font-family: 'Roboto';
+                color: #FF0063;
+                padding: 2rem;
+            }
+
+            .skill_description {
+                font-size: 0.8rem;
+                font-family: 'Poppins';
+                line-height: 20px;
+                color: #2C3639;
+            }
+
+            a {
+                display: block;
+                font-size: 1rem;
+                font-style: italic;
+            }
         }
     }
 
