@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './pages/shared/sidenav/sidenav.component';
 import { BodyComponent } from './pages/body/body.component';
 import { animate } from '@angular/animations';
+import { FooterComponent } from './pages/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    BodyComponent
+    BodyComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
