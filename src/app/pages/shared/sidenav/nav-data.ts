@@ -9,15 +9,15 @@ export const navbarData = [
     icon: "fal fa-solid fa-user",
     label: "About Me"
   },
+  // {
+  //   routeLink: "skills",
+  //   icon: "fal fa-solid fa-laptop",
+  //   label: "Skills"
+  // },
   {
-    routeLink: "skills",
-    icon: "fal fa-solid fa-laptop",
-    label: "Skills"
-  },
-  {
-    routeLink: "experience",
+    routeLink: "gallery",
     icon: "fal fa-solid fa-head-side-brain",         
-    label: "Experience"
+    label: "Gallery"
   },
   {
     routeLink: "projects",
