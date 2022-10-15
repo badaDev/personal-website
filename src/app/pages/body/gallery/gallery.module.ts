@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
+import { AngularTiltModule } from 'angular-tilt';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { GalleryComponent } from './gallery.component';
   ],
   imports: [
     CommonModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    AngularTiltModule
   ]
 })
 export class GalleryModule { }
