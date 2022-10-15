@@ -17,8 +17,12 @@ const routes: Routes = [
         path: 'about', 
         loadChildren: () => import('./pages/body/about/about.module').then(m => m.AboutModule) 
       },
+      { path: 'gallery', 
+        loadChildren: () => import('./pages/body/gallery/gallery.module').then(m => m.GalleryModule) 
+      },
     ]
   },
+  
   
 ];
 
