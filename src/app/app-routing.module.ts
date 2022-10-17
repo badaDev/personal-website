@@ -20,8 +20,13 @@ const routes: Routes = [
       { path: 'gallery', 
         loadChildren: () => import('./pages/body/gallery/gallery.module').then(m => m.GalleryModule) 
       },
+      { 
+        path: 'projects', 
+        loadChildren: () => import('./pages/body/projects/projects.module').then(m => m.ProjectsModule) 
+      },
     ]
   },
+
   
   
 ];
