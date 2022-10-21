@@ -28,8 +28,12 @@ const routes: Routes = [
         path: 'contact', 
         loadChildren: () => import('./pages/body/contact/contact.module').then(m => m.ContactModule) 
       },
+      { path: 'update', 
+        loadChildren: () => import('./pages/body/update/update.module').then(m => m.UpdateModule) 
+      },
     ]
   },
+  
   
 
   
