@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { UpdateServiceService } from '../update/update-service.service';
+
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-gallery',
@@ -6,22 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+  isLoading: boolean = false;
+  allImages: any[] = [];
 
-  myImages = [
-    {
-      imgName: "../../../../assets/images/KAY_2057.jpg"
-    },
-    {
-      imgName: "../../../../assets/images/KAY_2059.jpg"
-    },
-    {
-      imgName: "../../../../assets/images/KAY_2080.jpg"
-    },
-  ]
-
-  constructor() { }
+  constructor(
+    private updateService: UpdateServiceService,
+    private ref: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
+    this.getAllImages();
   }
+
+  getAllImages() {
+    this.isLoading = true;
+    this.updateService.getAllImages().subscribe(
+      (res) => {
+        this.isLoading = false;
+        this.allImages = res;
+        this.ref.detectChanges();
+      },
+      (error) => {
+        this.isLoading = false;
+        alertify.error("Error fetching images");
+      }
+    )
+  }
+  
 
 }

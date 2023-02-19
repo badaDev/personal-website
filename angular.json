@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "nurudeen-bada:build:production",
+            "firebaseProject": "portfolio-website-f60d7",
+            "firebaseHostingSite": "nurudeen-bada"
+          }
         }
       }
     }

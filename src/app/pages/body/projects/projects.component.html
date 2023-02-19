@@ -2,101 +2,38 @@
     <span class="heading">my projects</span><hr class="line"> <hr class="line" style="width: 3rem;" >
 
     <div class="skills">
-        <div class="skill_card" *ngFor="let project of myProjects">
-            <img src="{{project.projectImg}}" aTilt alt="">
-            <span class="skill_name">{{project.projectName}}</span>
-            <!-- accordion -->
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left modal_btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        More Details
-                      </button>
-                    </h2>
-                  </div>
-              
-                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p class="skill_description">
-                            {{project.projectDescription}}
-                        </p>
+        <div class="skill_card" *ngFor="let project of allProjects">
+            <img src="{{project.projectImage}}" aTilt alt="">
+            <div class="">
+              <div>
+                <h2 class="mb-0">
+                  <span class="skill_name">{{project.projectName}}</span>
+                </h2>
+              </div>
+          
+              <div>
+                <div>
+                    <p class="skill_description">
+                        {{project.projectDescription}}
+                    </p>
 
-                        <div class="tech_used">
-                            <h6>Tech Used</h6>
-                            <span>{{project.techUsed}}</span>
-                        </div>
+                    <div class="tech_used">
+                        <h6>Tech Used</h6>
+                        <span>{{project.techUsed}}</span>
                     </div>
-                    <div class="card-footer">
-                      <button class="project_button">Live Project</button>
-                      <button class="project_button">Source Code</button>
-                    </div>
-                  </div>
                 </div>
+                <div>
+                  <a *ngIf="project.projectLink" class="project_button" href="{{project.projectLink}}" target="_blank">Live</a>
+                  <a *ngIf="!project.projectLink" class="project_button">Not Live</a>
+                </div>
+              </div>
             </div>
         </div>
-
-        <!-- <div class="skill_card">
-            <img src="../../../../assets/projects/Screenshot (93).png" aTilt alt="">
-            <span class="skill_name">Mobile Hair Salon</span>
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                        More Details
-                      </button>
-                    </h2>
-                  </div>
-              
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p class="skill_description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Neque, quo! Minus quae culpa consequuntur dolores velit at, 
-                            laborum voluptatum delectus maiores libero praesentium 
-                            assumenda amet voluptatibus nulla quisquam qui voluptates.
-                        </p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="skill_card">
-            <img src="../../../../assets/projects/Screenshot (93).png" aTilt alt="">
-            <span class="skill_name">Mobile Hair Salon</span>
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                        More Details
-                      </button>
-                    </h2>
-                  </div>
-              
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p class="skill_description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Neque, quo! Minus quae culpa consequuntur dolores velit at, 
-                            laborum voluptatum delectus maiores libero praesentium 
-                            assumenda amet voluptatibus nulla quisquam qui voluptates.
-                        </p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
-    
-
-    <!-- <div class="social_icon">
-        <i class="fal fa-solid fa-linkedin" style="color: red;"></i>
-    </div> -->
-
+    <div *ngIf="allProjects.length === 0" class="coming_soon">
+      <h1>Coming Soon</h1>
+    </div>
 </div>
 
 

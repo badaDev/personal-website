@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -10,6 +11,7 @@ export class BodyComponent implements OnInit {
 
   @Input() collapsed = false;
   @Input() screenWidth = 0;
+  
   
   constructor() { }
 
