@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SidenavToggle } from './pages/shared/sidenav/sidenav-toggle';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +12,8 @@ export class AppComponent {
 
   isSideNavCollapsed = false;
   screenWidth = 0
+
+  
 
 
   onToggleSideNav(data: SidenavToggle) {
