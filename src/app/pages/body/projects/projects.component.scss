@@ -710,6 +710,124 @@
     }
 }
 
+@media only screen and (max-width: 430px) {
+    .about {
+        padding: 0 !important;
+        margin-left: -8px;
+
+        .heading {
+            font-size: 2rem !important;
+            font-family: 'Roboto';
+            text-transform: capitalize;
+            color: #2C3639;
+            margin-bottom: none !important;
+        }
+    }
+    .introduction {
+        padding: 1.5rem 0rem; 
+        margin-left: 0px !important;
+
+        .my_img {
+            width: 20rem !important;
+            height: 24rem !important;
+            // padding: 1rem !important;
+            margin: 5px;
+
+        }
+
+        .title span {
+            font-size: 1.5rem !important;
+            color: #2C3639;
+            letter-spacing: 0.3rem;
+            font-family: 'Roboto';
+        }
+
+        .para {
+            margin-top: 1.5rem !important;
+            p {
+                color: #2C3639;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                line-height: 25px !important;
+                font-family: 'Poppins';
+                text-align: justify;
+            }
+        }
+
+    }
+
+    .skills {
+        width: 100%;
+        margin: 3rem 0rem !important;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        text-align: center;
+
+        .skill_card {
+            width: 18rem !important;
+            padding: 0rem !important;
+            // border: 1px solid #2C3639;
+            margin-bottom: 2rem;
+            // background-image: linear-gradient(-225deg, #2cd8d5 0%, #6b8dd6 48%, #8e37d7 100%);
+
+
+            img {
+                width: 16rem !important;
+                height: 16rem !important;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+            }
+
+            .skill_name {
+                font-size: 1.5rem;
+                font-weight: 700;
+                font-family: 'Roboto';
+                // color: #FF0063;
+                color: #FF0063;
+                padding: 2rem;
+            }
+
+            .skill_description {
+                font-size: 0.8rem;
+                font-family: 'Poppins';
+                line-height: 20px;
+                color: #2C3639;
+                // color: #fff;
+            }
+
+            a {
+                display: block;
+                font-size: 1rem;
+                font-style: italic;
+                color: #FF0063;
+            }
+        }
+    }
+
+    .action_buttons {
+        width: 15rem !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 50px !important;
+        // margin: 0 auto;
+
+        button {
+            color: #fff;
+            font-size: 0.7rem !important;
+            font-weight: bold;
+            font-family: 'Poppins';
+            background: #FF0063;
+            padding: 1rem;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+
 @media only screen and (max-width: 414px) {
     .about {
         padding: 0 !important;

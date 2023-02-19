@@ -35,6 +35,7 @@
             font-weight: 500;
             font-family: 'Poppins';
             line-height: 40px;
+            text-align: justify;
         }
         
     }
@@ -329,6 +330,56 @@
     }
 }
 
+@media only screen and (max-width: 430px) {
+    .home {
+        padding: 1rem 0rem !important;
+        height: 100%;
+        .heading {
+            padding: 0.2rem 1rem !important;
+            .intro {
+                display: flex;
+                padding-bottom: 0.4rem !important;
+                .name {
+                    font-size: 0.9rem !important;
+                    line-height: 25px;
+                }
+            }
+            .intro, .title span:first-of-type {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+            }
+            .intro, .title {
+                margin-bottom: 0.2rem !important;
+            }
+            .role {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+                padding-bottom: 0.8rem !important;
+            }
+            p {
+                font-size: 0.8rem !important;
+                font-weight: 500;
+                line-height: 20px !important;
+                padding: 1rem 0rem !important;
+                width: 19rem !important;
+            }
+        }
+
+        .image {
+            padding: 0.1rem 0rem !important; 
+            text-align: center !important;
+            margin-left: 15px !important;
+            img {
+                width: 18rem !important;
+                height: 20rem !important;
+                padding: 0.3rem !important;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 412px) {
     .home {
         padding: 1rem 0rem !important;
@@ -382,6 +433,56 @@
 @media only screen and (max-width: 390px) {
     .home {
         padding: 1rem 0rem !important;
+        margin-left: 3px !important;
+        // height: 100%;
+        .heading {
+            padding: 0.2rem 1rem !important;
+            .intro {
+                display: flex;
+                padding-bottom: 0.4rem !important;
+                .name {
+                    font-size: 0.9rem !important;
+                    line-height: 25px;
+                }
+            }
+            .intro, .title span:first-of-type {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+            }
+            .intro, .title {
+                margin-bottom: 0.2rem !important;
+            }
+            .role {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+                padding-bottom: 0.8rem !important;
+            }
+            p {
+                font-size: 0.8rem !important;
+                font-weight: 500;
+                line-height: 20px !important;
+                padding: 1rem 0.3rem !important;
+                width: 19rem !important;
+            }
+        }
+
+        .image {
+            padding: 0.1rem 0rem !important; 
+            text-align: center !important;
+            img {
+                width: 18rem !important;
+                height: 20rem !important;
+                padding: 0.3rem !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .home {
+        padding: 1rem 0rem !important;
         // height: 100%;
         .heading {
             padding: 0.2rem 1rem !important;
@@ -420,8 +521,58 @@
             padding: 0.1rem 0rem !important; 
             text-align: center !important;
             img {
-                width: 20rem !important;
-                height: 22rem !important;
+                width: 18rem !important;
+                height: 20rem !important;
+                padding: 0.3rem !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .home {
+        padding: 1rem 0rem !important;
+        // height: 100%;
+        .heading {
+            padding: 0.2rem 1rem !important;
+            .intro {
+                display: flex;
+                padding-bottom: 0.4rem !important;
+                .name {
+                    font-size: 0.9rem !important;
+                    line-height: 25px;
+                }
+            }
+            .intro, .title span:first-of-type {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+            }
+            .intro, .title {
+                margin-bottom: 0.2rem !important;
+            }
+            .role {
+                font-size: 0.8rem !important;
+                font-weight: 600;
+                line-height: 20px;
+                padding-bottom: 0.8rem !important;
+            }
+            p {
+                font-size: 0.8rem !important;
+                font-weight: 500;
+                line-height: 20px !important;
+                padding: 1rem 0rem !important;
+                width: 15rem !important;
+                text-align: justify;
+            }
+        }
+
+        .image {
+            padding: 0.1rem 0rem !important; 
+            text-align: center !important;
+            img {
+                width: 17rem !important;
+                height: 19rem !important;
                 padding: 0.3rem !important;
             }
         }

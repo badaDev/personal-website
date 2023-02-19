@@ -657,6 +657,127 @@
     }
 }
 
+@media only screen and (max-width: 430px) {
+    .about {
+        padding: 0 !important;
+        margin-left: -10px;
+
+        .heading {
+            font-size: 2rem !important;
+            font-family: 'Roboto';
+            text-transform: capitalize;
+            color: #2C3639;
+            margin-bottom: none !important;
+        }
+    }
+    .introduction {
+        padding: 1.5rem 0rem; 
+        margin-left: 0px !important;
+
+        .my_img {
+            width: 20rem !important;
+            height: 24rem !important;
+            // padding: 1rem !important;
+            margin-left: -2px !important;
+
+        }
+
+        .title span {
+            font-size: 1.5rem !important;
+            color: #2C3639;
+            letter-spacing: 0.3rem;
+            font-family: 'Roboto';
+        }
+
+        .para {
+            margin-top: 1.5rem !important;
+            margin-left: -3px !important;
+            p {
+                color: #2C3639;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                line-height: 25px !important;
+                font-family: 'Poppins';
+                text-align: justify;
+                padding: 0 10px; 
+                margin-left: -3px !important;
+            }
+        }
+
+    }
+
+    .skills {
+        width: 100%;
+        margin: 1.5rem 1rem !important;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        text-align: center;
+
+        .skill_card {
+            width: 18rem !important;
+            padding: 1rem;
+            // border: 1px solid #2C3639;
+            border: none;
+            border-radius: 10px;
+            // margin-right: 2px !important;
+            margin-bottom: 2rem;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+            background-image: linear-gradient(-225deg, #2cd8d5 0%, #6b8dd6 48%, #8e37d7 100%);
+
+
+            img {
+                width: 5rem !important;
+                height: 5rem !important;
+            }
+
+            .skill_name {
+                font-size: 1.1rem !important;
+                font-weight: 700;
+                font-family: 'Roboto';
+                // color: #FF0063;
+                color: #fff;
+                padding: 1.5rem !important;
+            }
+
+            .skill_description {
+                font-size: 0.8rem !important;
+                font-family: 'Poppins';
+                line-height: 15px;
+                // color: #2C3639;
+                color: #fff;
+            }
+
+            a {
+                display: block;
+                font-size: 0.8rem !important;
+                font-style: italic;
+                color: #FF0063;
+            }
+        }
+    }
+
+    .action_buttons {
+        width: 15rem !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 50px !important;
+        // margin: 0 auto;
+
+        button {
+            color: #fff;
+            font-size: 0.7rem !important;
+            font-weight: bold;
+            font-family: 'Poppins';
+            background: #FF0063;
+            padding: 1rem;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
 @media only screen and (max-width: 414px) {
     .about {
         padding: 0 !important;
@@ -777,6 +898,7 @@
 @media only screen and (max-width: 412px) {
     .about {
         padding: 0 !important;
+        margin-left: 5px !important;
 
         .heading {
             font-size: 2rem !important;
@@ -894,6 +1016,7 @@
 @media only screen and (max-width: 390px) {
     .about {
         padding: 0 !important;
+        margin-left: 0px !important;
 
         .heading {
             font-size: 2rem !important;
@@ -910,10 +1033,12 @@
 
         .my_img {
             width: 18rem !important;
-            height: 22rem !important;
+            height: 20rem !important;
             // padding: 1rem !important;
-            margin: 5px;
-
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+            margin-right: 2px !important;
+            margin-left: -2px !important;
         }
 
         .title span {
