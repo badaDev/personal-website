@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
-import { AngularTiltModule } from 'angular-tilt';
+// import { AngularTiltModule } from 'angular-tilt';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { AngularTiltModule } from 'angular-tilt';
   imports: [
     CommonModule,
     AboutRoutingModule,
-    AngularTiltModule
+    // AngularTiltModule
   ]
 })
 export class AboutModule { }

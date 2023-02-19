@@ -175,17 +175,27 @@
             h6 {
                 font-family: 'Roboto';
                 font-size: 1rem;
+                text-decoration: underline;
             }
             span {
                 color: #FF0063;
                 font-family: 'Poppins';
                 font-size: 1rem;
                 font-weight: 100;
+                font-style: italic;
             }
         }
     }
 
-    
+    .coming_soon {
+        background:  #fff;
+        width: 100%;
+        text-align: center;
+
+        h1{
+            color: #FF0063;
+        }
+    }
 
     
 }

@@ -1,139 +1,259 @@
 <div class="about">
-    <span class="heading">update site</span><hr class="line"> <hr class="line" style="width: 3rem;" >
-    <div class="introduction row">
-        <div class="skills">
-            <div class="skill_card">
-                <!-- accordion -->
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                          <button class="btn btn-block text-left modal_btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Update Skills
-                          </button>
-                        </h2>
-                      </div>
-                  
-                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <form class="contact_form">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="name" class="form-control" id="name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image">Image</label>
-                                        <input type="file" class="form-control" id="image">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea type="text" class="form-control" id="description"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="link">Link To Skill Site</label>
-                                        <input type="text" class="form-control" id="link" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-block contact_btn">Update Skills</button>
-                                </div>
-                            </form>
-                      </div>
-                    </div>
-                </div>
-            </div>  
+  <span class="heading">update site</span>
+  <hr class="line" />
+  <hr class="line" style="width: 3rem" />
+  <div class="introduction row">
+    <div class="skills">
+      <!-- update skills -->
+      <div class="skill_card">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-block text-left modal_btn"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Update Skills
+                </button>
+              </h2>
+            </div>
 
-            <div class="skill_card">
-                <!-- accordion -->
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                      <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                          <button class="btn btn-block text-left modal_btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            Update Gallery
-                          </button>
-                        </h2>
-                      </div>
-                  
-                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <form class="contact_form">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="image">Image</label>
-                                        <input type="file" class="form-control" id="image">
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-block contact_btn">Update Gallery</button>
-                                </div>
-                            </form>
-                      </div>
-                    </div>
-                </div>
+            <div
+              id="collapseOne"
+              class="collapse"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <form
+                class="contact_form"
+                [formGroup]="updateSkillForm"
+                (submit)="updateSkills(updateSkillForm.value)"
+              >
+                <div class="card-body">
+                  <div style="text-align: center">
+                    <img [src]="skillImgSrc" width="350px" height="250px" (click)="fileUploader.click()" />
+                  </div>
 
-                
-            </div> 
-
-            <div class="skill_card">
-                <!-- accordion -->
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                      <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                          <button class="btn btn-block text-left modal_btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            Update Projects
-                          </button>
-                        </h2>
-                      </div>
-                  
-                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <form class="contact_form">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="name">Project Name</label>
-                                        <input type="name" class="form-control" id="name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image">Project Image</label>
-                                        <input type="file" class="form-control" id="image">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description">Project Description</label>
-                                        <textarea type="text" class="form-control" id="description"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tech_used">Technologies Used</label>
-                                        <textarea type="text" class="form-control" id="tech_used"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="link">Link To Live Project</label>
-                                        <input type="text" class="form-control" id="link" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="github_link">GitHub Repo</label>
-                                        <input type="text" class="form-control" id="github_link" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-block contact_btn">Update Project</button>
-                                </div>
-                            </form>
-                      </div>
-                    </div>
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                      type="name"
+                      class="form-control"
+                      id="name"
+                      formControlName="skillName"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      formControlName="skillImage"
+                      accept="image/*"
+                      #fileUploader
+                      (change)="showPreview($event)"
+                    />
+                  </div>
+                  <!-- <div *ngIf="isLoading" class="lds-facebook"><div></div><div></div><div></div></div> -->
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="description"
+                      formControlName="description"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="link">Link To Skill Site</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="link"
+                      placeholder=""
+                      formControlName="linkToSkillInfo"
+                    />
+                  </div>
                 </div>
-            </div> 
+                <div class="card-footer">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block contact_btn"
+                  >
+                    Update Skills
+                  </button>
+                </div>
+                <!-- <div *ngIf="isSubmitted" class="lds-hourglass"></div> -->
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- update gallery -->
+
+      <div class="skill_card">
+        <!-- accordion -->
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-block text-left modal_btn"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseTwo"
+                  aria-expanded="true"
+                  aria-controls="collapseTwo"
+                >
+                  Update Gallery
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordionExample"
+            >
+              <form class="contact_form" [formGroup]="updateGalleryForm" (submit)="updateGallery()">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      formControlName="galleryImage"
+                      accept="image/*"
+                      #fileUploader
+                      (change)="showGalleryPreview($event)"
+                    />
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block contact_btn"
+                  >
+                    Update Gallery
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- update project -->
+
+      <div class="skill_card">
+        <!-- accordion -->
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-block text-left modal_btn"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="true"
+                  aria-controls="collapseThree"
+                >
+                  Update Projects
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseThree"
+              class="collapse"
+              aria-labelledby="headingThree"
+              data-parent="#accordionExample"
+            >
+              <form class="contact_form" [formGroup]="updateProjectForm" (submit)="updateProjects(updateProjectForm.value)">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="name">Project Name</label>
+                    <input
+                      type="name"
+                      class="form-control"
+                      id="name"
+                      formControlName="projectName"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="projectImage">Project Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="ProjectImage"
+                      formControlName="projectImage"
+                      accept="image/*"
+                      #fileUploader
+                      (change)="showProjectPreview($event)"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="projectDescription">Project Description</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="projectDescription"
+                      formControlName="projectDescription"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="tech_used">Technologies Used</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="tech_used"
+                      formControlName="techUsed"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="link">Link To Live Project</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="link"
+                      placeholder=""
+                      formControlName="projectLink"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="github_link">GitHub Repo</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="github_link"
+                      placeholder=""
+                      formControlName="gitRepo"
+                    />
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block contact_btn"
+                  >
+                    Update Project
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
-
-
-
-  
-
-
-
-
-  
-

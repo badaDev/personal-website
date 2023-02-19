@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "portfolio-website-f60d7"
+  },
+  "targets": {
+    "portfolio-website-f60d7": {
+      "hosting": {
+        "nurudeen-bada": [
+          "nurudeen-bada"
+        ]
+      }
+    }
+  }
+}

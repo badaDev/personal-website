@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { UpdateServiceService } from '../update/update-service.service';
+
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-projects',
@@ -6,34 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  isLoading: boolean = false;
+  allProjects: any[] = [];
 
-  myProjects = [
-    {
-      id: 1,
-      projectName: "Mobile Hair Salon",
-      projectImg: "../../../../assets/projects/Screenshot (93).png",
-      projectDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quo! Minus quae culpa consequuntur dolores velit at, laborum voluptatum delectus maiores libero praesentium assumenda amet voluptatibus nulla quisquam qui voluptates.",
-      techUsed: "HTML, CSS, JS, Bootstrap"
-    },
-    {
-      id: 2,
-      projectName: "Mobile Hair Salon",
-      projectImg: "../../../../assets/projects/Screenshot (93).png",
-      projectDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quo! Minus quae culpa consequuntur dolores velit at, laborum voluptatum delectus maiores libero praesentium assumenda amet voluptatibus nulla quisquam qui voluptates.",
-      techUsed: "HTML, CSS, JS, Bootstrap"
-    },
-    {
-      id: 3,
-      projectName: "Mobile Hair Salon",
-      projectImg: "../../../../assets/projects/Screenshot (93).png",
-      projectDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quo! Minus quae culpa consequuntur dolores velit at, laborum voluptatum delectus maiores libero praesentium assumenda amet voluptatibus nulla quisquam qui voluptates.",
-      techUsed: "HTML, CSS, JS, Bootstrap"
-    }
-  ]
-
-  constructor() { }
+  constructor(
+    private updateService: UpdateServiceService,
+    private ref: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
+    this.getAllProjects();
   }
+
+  getAllProjects() {
+    this.isLoading = true;
+    this.updateService.getAllProjects().subscribe(
+      (res) => {
+        this.isLoading = false;
+        this.allProjects = res;
+        this.ref.detectChanges();
+        
+      },
+      (error) => {
+        this.isLoading = false;
+        alertify.error("Error fetching projects");
+      }
+    )
+  }
+
 
 }

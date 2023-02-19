@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
-import { AngularTiltModule } from 'angular-tilt';
+// import { AngularTiltModule } from 'angular-tilt';
+
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { AngularTiltModule } from 'angular-tilt';
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    AngularTiltModule
+    // AngularTiltModule
   ]
 })
 export class ProjectsModule { }
