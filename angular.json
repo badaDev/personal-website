@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "nurudeen-bada:build:production"
+              "buildTarget": "nurudeen-bada:build:production"
             },
             "development": {
-              "browserTarget": "nurudeen-bada:build:development"
+              "buildTarget": "nurudeen-bada:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nurudeen-bada:build"
+            "buildTarget": "nurudeen-bada:build"
           }
         },
         "test": {
