@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './pages/shared/sidenav/sidenav.component';
 import { FooterComponent } from './pages/shared/footer/footer.component';
 import { BodyComponent } from './pages/body/body.component';
 import { animate } from '@angular/animations';
@@ -20,18 +19,19 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ApiConfig } from './core/apiConfig';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './pages/shared/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
     BodyComponent,
     // FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     FontAwesomeModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

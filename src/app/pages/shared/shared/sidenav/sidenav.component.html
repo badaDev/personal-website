@@ -29,5 +29,35 @@
     </div>
 </div>
 
+<!-- <mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+        <mat-nav-list (click)="sidenav.close()">
+            <button mat-list-item style="margin: auto;" class="logo" (click)="sidenav.close()">
+                N
+            </button>
+            <a 
+                *ngFor="let data of navData" mat-list-item 
+                routerLink="{{ data.routeLink }}"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon >{{data.icon}}</mat-icon>
+                <span class="sidenav-link-text">{{ data.label }}</span>
+            </a>
+
+            <div class="icon">
+                <a href="https://www.linkedin.com/in/nurudeen-bada-457a43200/" target="_blank" rel="noopener noreferrer">
+                    <img src="../../../../assets/icon/linkedin.png" alt="">
+                </a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar color="primary">
+        <button  mat-icon-button (click)="sidenav.open()">
+            N
+        </button>
+    </mat-toolbar>
+
+</mat-sidenav-container> -->
+
 
  

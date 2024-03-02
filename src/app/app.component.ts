@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SidenavToggle } from './pages/shared/sidenav/sidenav-toggle';
+import { SidenavToggle } from './pages/shared/shared/sidenav/sidenav-toggle';
 
 
 @Component({
