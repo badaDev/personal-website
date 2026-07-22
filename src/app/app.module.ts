@@ -20,6 +20,7 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ApiConfig } from './core/apiConfig';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SidenavComponent,
     BodyComponent,
+    PageNotFoundComponent,
     // FooterComponent
   ],
   imports: [

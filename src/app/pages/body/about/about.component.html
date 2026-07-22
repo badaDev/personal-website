@@ -45,13 +45,13 @@
         <span>loading...</span>
     </div> -->
     <div class="skills">
-        <div class="skill_card" *ngFor="let skill of allSkills" aTilt>
+        <div class="skill_card" *ngFor="let skill of allSkills">
             <span class="skill_name">{{skill.skillName}}</span>
             <figure>
                 <img src="{{skill.skillImage}}" alt="">
             </figure>
             <span class="skill_description">{{skill.description}}</span>
-            <a href="{{skill.linkToSkillInfo}}" target="_blank">read more...</a>
+            <a href="{{skill.linkToSkillInfo}}" target="_blank" rel="noopener noreferrer">read more...</a>
         </div>
     </div>
 </div>

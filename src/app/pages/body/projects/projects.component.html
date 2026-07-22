@@ -3,7 +3,7 @@
 
     <div class="skills">
         <div class="skill_card" *ngFor="let project of allProjects">
-            <img src="{{project.projectImage}}" aTilt alt="">
+            <img src="{{project.projectImage}}" alt="">
             <div class="">
               <div>
                 <h2 class="mb-0">
@@ -23,8 +23,9 @@
                     </div>
                 </div>
                 <div>
-                  <a *ngIf="project.projectLink" class="project_button" href="{{project.projectLink}}" target="_blank">Live</a>
-                  <a *ngIf="!project.projectLink" class="project_button">Not Live</a>
+                  <a *ngIf="project.projectLink" class="project_button" href="{{project.projectLink}}" target="_blank" rel="noopener noreferrer">Live</a>
+                  <span *ngIf="!project.projectLink" class="project_button">Not Live</span>
+                  <a *ngIf="project.gitRepo" class="project_button" href="{{project.gitRepo}}" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>

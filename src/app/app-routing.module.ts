@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BodyComponent } from './pages/body/body.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: 'body'},
   {
     path: '', component: BodyComponent,
     children: [
-      { path: "", redirectTo: 'home', pathMatch: "prefix" },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { 
         path: 'home', 
         loadChildren: 
@@ -28,9 +29,7 @@ const routes: Routes = [
         path: 'contact', 
         loadChildren: () => import('./pages/body/contact/contact.module').then(m => m.ContactModule) 
       },
-      { path: 'update', 
-        loadChildren: () => import('./pages/body/update/update.module').then(m => m.UpdateModule) 
-      },
+      { path: '**', component: PageNotFoundComponent },
     ]
   },
   

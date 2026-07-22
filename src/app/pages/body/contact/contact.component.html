@@ -1,7 +1,7 @@
 <div class="about">
     <span class="heading">contact</span><hr class="line"> <hr class="line" style="width: 3rem;" >
     <div class="introduction row">
-        <form class="contact_form" [formGroup]="contactForm" (ngSubmit)="sendMessage(contactForm.value)">
+        <form class="contact_form" [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate>
             <div class="form-group">
                     <label for="name">Name</label>
                     <input type="name" class="form-control" id="name" formControlName="name">
@@ -20,10 +20,18 @@
                 <label for="message">Message</label>
                 <textarea type="text" class="form-control" id="message" formControlName="message"></textarea>
             </div>
-            <div class="form-group contact" *ngIf="messageSent === true">
+            <div class="form-group contact" *ngIf="messageSent" role="status" aria-live="polite">
                 <span>Thank you your message has been received!</span>
             </div>
-            <button type="submit" class="btn btn-primary btn-block contact_btn">Send Message</button>
+            <div class="form-group submission-error" *ngIf="submissionError" role="alert">
+                {{ submissionError }}
+            </div>
+            <button
+                type="submit"
+                class="btn btn-primary btn-block contact_btn"
+                [disabled]="contactForm.invalid || isSubmitting">
+                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button>
         </form>
     </div>
 </div>

@@ -13,7 +13,7 @@ export class ContactService {
     private apiConfig: ApiConfig,
   ) { }
 
-  sendMessgae(message: Contact) {
+  sendMessage(message: Contact) {
     return this.httpClient.post(this.apiConfig.message, message);
   }
 }
