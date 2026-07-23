@@ -3,7 +3,9 @@ import {
   ExpertiseItem,
   PortfolioProfile,
   PortfolioProject,
+  ProfessionalDevelopmentItem,
   SocialLink,
+  TechnologyGroup,
 } from './portfolio.models';
 
 export const PROFILE: PortfolioProfile = {
@@ -122,12 +124,40 @@ export const EXPERTISE: readonly ExpertiseItem[] = [
 ];
 
 export const EMPLOYMENT_HISTORY: readonly EmploymentRecord[] = [
-  { company: 'Blockchain Advisors Ltd', role: 'Frontend Software Engineer (Contract)', dates: 'June 2026 – Present' },
-  { company: 'Techforce Inc Ltd', role: 'Frontend Engineer (Project-Based)', dates: 'October 2025 – May 2026' },
-  { company: 'BAfashion', role: 'Frontend Developer', dates: 'March 2025 – August 2025' },
-  { company: 'Zarttech', role: 'Angular Developer', dates: 'March 2024 – March 2025' },
-  { company: 'Global Accelerex Ltd', role: 'Software Developer', dates: 'March 2022 – March 2024' },
-  { company: 'Jbitss Tech', role: 'Frontend Developer', dates: 'March 2019 – February 2022' },
+  { company: 'Blockchain Advisors Ltd', role: 'Frontend Software Engineer (Contract)', startDate: '2026-06', startLabel: 'June 2026', endDate: null, endLabel: 'Present' },
+  { company: 'Techforce Inc Ltd', role: 'Frontend Engineer (Project-Based)', startDate: '2025-10', startLabel: 'October 2025', endDate: '2026-05', endLabel: 'May 2026' },
+  { company: 'BAfashion', role: 'Frontend Developer', startDate: '2025-03', startLabel: 'March 2025', endDate: '2025-08', endLabel: 'August 2025' },
+  { company: 'Zarttech', role: 'Angular Developer', startDate: '2024-03', startLabel: 'March 2024', endDate: '2025-03', endLabel: 'March 2025' },
+  { company: 'Global Accelerex Ltd', role: 'Software Developer', startDate: '2022-03', startLabel: 'March 2022', endDate: '2024-03', endLabel: 'March 2024' },
+  { company: 'Jbitss Tech', role: 'Frontend Developer', startDate: '2019-03', startLabel: 'March 2019', endDate: '2022-02', endLabel: 'February 2022' },
+];
+
+export const EXPERIENCE_TECHNOLOGY_GROUPS: readonly TechnologyGroup[] = [
+  {
+    name: 'Frontend',
+    technologies: ['Angular', 'TypeScript', 'JavaScript', 'RxJS', 'NgRx', 'HTML', 'CSS', 'SCSS', 'Responsive Web Development', 'REST API Integration'],
+    status: 'established',
+  },
+  {
+    name: 'Full-stack development',
+    description: 'Currently expanding into full-stack development with Node.js and NestJS.',
+    technologies: ['Node.js', 'NestJS', 'PostgreSQL', 'Prisma'],
+    status: 'developing',
+  },
+  {
+    name: 'Currently expanding',
+    description: 'Technologies currently being learned and developed.',
+    technologies: ['C#', '.NET'],
+    status: 'developing',
+  },
+];
+
+export const PROFESSIONAL_DEVELOPMENT: readonly ProfessionalDevelopmentItem[] = [
+  { name: 'C# and .NET Development', status: 'In Progress' },
+  { name: 'Angular: The Complete Guide' },
+  { name: 'Angular Material In-Depth' },
+  { name: 'NgRx State Management' },
+  { name: 'Web Application Development with JavaScript' },
 ];
 
 export const MENTORSHIP = {

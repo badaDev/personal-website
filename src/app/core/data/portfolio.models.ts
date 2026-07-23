@@ -47,5 +47,21 @@ export interface ExpertiseItem {
 export interface EmploymentRecord {
   readonly company: string;
   readonly role: string;
-  readonly dates: string;
+  readonly startDate: string;
+  readonly startLabel: string;
+  readonly endDate: string | null;
+  readonly endLabel: string;
+  readonly industry?: string;
+}
+
+export interface TechnologyGroup {
+  readonly name: string;
+  readonly description?: string;
+  readonly technologies: readonly string[];
+  readonly status?: 'established' | 'developing';
+}
+
+export interface ProfessionalDevelopmentItem {
+  readonly name: string;
+  readonly status?: 'In Progress';
 }
