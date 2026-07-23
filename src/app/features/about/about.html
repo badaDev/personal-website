@@ -1,1 +1,182 @@
-<section class="page-section"><div class="container page-intro"><p class="eyebrow">About</p><h1>About Nurudeen</h1><p class="lede">Biography, skills and professional focus will be presented here.</p></div></section>
+<section class="about-hero" aria-labelledby="about-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <p class="eyebrow">The person behind the code</p>
+      <h1 id="about-title">{{ name }}</h1>
+      <p class="positioning">{{ positioning }}</p>
+      <p class="hero-story">My path into software engineering did not begin with a computing degree. It began with a deliberate decision to learn something new, the patience to start with the foundations and the willingness to keep progressing one stage at a time.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" routerLink="/projects">View my projects <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" routerLink="/experience">Explore my experience</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <div class="portrait-accent" aria-hidden="true"></div>
+      <img
+        src="/assets/images/profile/nurudeen-bada-portrait.jpeg"
+        width="1142"
+        height="1600"
+        fetchpriority="high"
+        alt="Black-and-white portrait of Nurudeen O. Bada wearing glasses and looking down thoughtfully">
+      <p>Curiosity. Patience. Steady progress.</p>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="page-section story-section" appReveal>
+    <div class="container story-flow">
+      @for (chapter of story.slice(0, 2); track chapter.eyebrow; let index = $index) {
+        <article class="story-chapter" [class.chapter-offset]="index % 2 === 1">
+          <p class="chapter-number" aria-hidden="true">0{{ index + 1 }}</p>
+          <div>
+            <p class="eyebrow">{{ chapter.eyebrow }}</p>
+            <h2>{{ chapter.title }}</h2>
+            @for (paragraph of chapter.paragraphs; track paragraph) { <p>{{ paragraph }}</p> }
+            @if (index === 1) {
+              <a class="text-link" routerLink="/experience">View my formal career history <span aria-hidden="true">→</span></a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="page-section motivation-section" appReveal aria-labelledby="motivation-title">
+    <div class="container motivation-layout">
+      <div>
+        <p class="eyebrow">{{ story[2].eyebrow }}</p>
+        <h2 id="motivation-title">{{ story[2].title }}</h2>
+      </div>
+      <div class="chapter-copy">
+        @for (paragraph of story[2].paragraphs; track paragraph) { <p>{{ paragraph }}</p> }
+        <p class="pull-statement">I want to understand what makes a product useful, not only what makes its interface work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section evolution-section" appReveal>
+    <div class="container narrow-story">
+      <p class="eyebrow">{{ story[3].eyebrow }}</p>
+      <h2>{{ story[3].title }}</h2>
+      @for (paragraph of story[3].paragraphs; track paragraph) { <p>{{ paragraph }}</p> }
+    </div>
+  </section>
+
+  <section class="page-section principles-section" appReveal aria-labelledby="principles-title">
+    <div class="container">
+      <app-section-heading
+        eyebrow="Working principles"
+        heading="The habits that guide how I approach engineering."
+        description="These are practical choices I continue to strengthen through project work, collaboration and review." />
+      <div class="principle-grid" id="principles-title">
+        @for (principle of principles; track principle.title; let index = $index) {
+          <article>
+            <span aria-hidden="true">0{{ index + 1 }}</span>
+            <h2>{{ principle.title }}</h2>
+            <p>{{ principle.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section fullstack-section" appReveal>
+    <div class="container split-story">
+      <div class="chapter-copy">
+        <p class="eyebrow">{{ story[4].eyebrow }}</p>
+        <h2>{{ story[4].title }}</h2>
+        @for (paragraph of story[4].paragraphs; track paragraph) { <p>{{ paragraph }}</p> }
+      </div>
+      <div class="technology-groups">
+        @for (group of technologyGroups; track group.name) {
+          <article>
+            <div class="technology-heading">
+              <h3>{{ group.name === 'Frontend' ? 'Strongest commercial frontend foundation' : group.name }}</h3>
+              @if (group.name === 'Currently expanding') { <span>In Progress</span> }
+            </div>
+            <div class="technology-list">
+              @for (technology of group.technologies; track technology) {
+                <app-technology-badge [label]="technology" />
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section ai-section" appReveal>
+    <div class="container narrow-story ai-card">
+      <p class="eyebrow">{{ story[5].eyebrow }}</p>
+      <h2>{{ story[5].title }}</h2>
+      @for (paragraph of story[5].paragraphs; track paragraph) { <p>{{ paragraph }}</p> }
+    </div>
+  </section>
+
+  <section class="page-section mentorship-section" appReveal aria-labelledby="mentorship-title">
+    <div class="container mentorship-layout">
+      <div>
+        <p class="eyebrow">Why mentoring matters to me</p>
+        <span class="role-label">{{ mentorship.role }}</span>
+        <h2 id="mentorship-title">{{ mentorship.title }}</h2>
+        <p>{{ mentorship.summary }}</p>
+      </div>
+      <div class="mentorship-reasons">
+        @for (paragraph of mentorship.motivation; track paragraph) { <p>{{ paragraph }}</p> }
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section reflection-section" appReveal>
+    <div class="container narrow-story">
+      <p class="eyebrow">Beyond the technology list</p>
+      <h2>I take growth seriously, without expecting it to happen all at once.</h2>
+      <p>Most of my progress has come from showing up consistently, being willing to ask questions, working through what I do not understand and trying again with a clearer approach. Curiosity helps me look deeper; patience and responsibility help me stay with the work when the answer is not immediate.</p>
+      <p>I value feedback because it reveals what I cannot always see on my own. I want to leave systems clearer than I found them, adapt when the evidence changes and help other people make progress without pretending I already know everything.</p>
+    </div>
+  </section>
+
+  <section class="page-section learning-section" appReveal aria-labelledby="learning-title">
+    <div class="container learning-layout">
+      <app-section-heading
+        eyebrow="Education & development"
+        heading="The foundations behind an evolving career."
+        description="Academic study and focused professional learning are both parts of my wider journey." />
+      <div id="learning-title">
+        <article class="education-card">
+          <p class="eyebrow">Education</p>
+          @for (record of education; track record.institution) {
+            <h2>{{ record.institution }}</h2>
+            <p>{{ record.qualification }}</p>
+          }
+        </article>
+        <article class="development-card">
+          <p class="eyebrow">Professional development</p>
+          <ul>
+            @for (item of professionalDevelopment; track item.name) {
+              <li><span>{{ item.name }}</span>@if (item.status) { <strong>{{ item.status }}</strong> }</li>
+            }
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section closing-section" appReveal aria-labelledby="closing-title">
+    <div class="container closing-card">
+      <p class="eyebrow">Where I am heading</p>
+      <h2 id="closing-title">Keep understanding. Keep improving. Help others progress.</h2>
+      <p>I want to understand how things work, improve them and leave them clearer than I found them. Whether I am contributing to an established application, building a product, learning backend development or helping a beginner understand JavaScript, I approach the work with curiosity, patience and a commitment to keep improving.</p>
+      <div class="closing-actions">
+        <a class="button button-primary" routerLink="/projects">View my projects</a>
+        <a class="button button-secondary" routerLink="/experience">Explore my experience</a>
+        <a class="button button-secondary" [href]="'mailto:' + profile.email">Email me</a>
+        @for (link of socialLinks; track link.url) {
+          <a class="button button-secondary" [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>
+        }
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,214 @@
+:host { display: block; overflow: clip; }
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, rgb(34 211 238 / 6%), transparent 42%), var(--color-bg);
+}
+
+.hero-glow {
+  position: absolute;
+  top: -12rem;
+  left: -12rem;
+  width: 34rem;
+  max-width: 95vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(129 140 248 / 22%), transparent 68%);
+  filter: blur(1rem);
+  pointer-events: none;
+  animation: glow-drift 11s ease-in-out infinite alternate;
+}
+
+.hero-layout {
+  position: relative;
+  display: grid;
+  gap: clamp(2.5rem, 8vw, 6rem);
+  align-items: center;
+  min-height: min(50rem, 92svh);
+  padding-block: 7rem 4rem;
+}
+
+.hero-copy { max-width: 44rem; }
+.hero-copy h1 { margin-bottom: 0.75rem; }
+
+.positioning {
+  max-width: 38rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-accent);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+}
+
+.hero-story,
+.story-chapter p:not(.eyebrow, .chapter-number),
+.chapter-copy p,
+.narrow-story > p:not(.eyebrow),
+.mentorship-layout p,
+.closing-card > p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.hero-story { max-width: 42rem; font-size: 1.0625rem; }
+.hero-actions, .closing-actions, .technology-list { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.hero-actions { margin-top: 2rem; }
+
+.portrait-wrap {
+  position: relative;
+  width: min(100%, 27rem);
+  justify-self: center;
+}
+
+.portrait-wrap img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1142 / 1600;
+  border: 1px solid var(--color-border);
+  border-radius: 10rem 10rem 1.25rem 1.25rem;
+  object-fit: cover;
+  object-position: center 30%;
+  box-shadow: var(--shadow-soft);
+}
+
+.portrait-accent {
+  position: absolute;
+  inset: 8% -5% -4% 10%;
+  border: 1px solid rgb(103 232 249 / 25%);
+  border-radius: 10rem 10rem 1.5rem 1.5rem;
+  background: var(--gradient-accent);
+  opacity: 0.3;
+}
+
+.portrait-wrap > p {
+  position: relative;
+  margin: 1rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.story-flow { display: grid; gap: clamp(4rem, 10vw, 8rem); }
+.story-chapter { display: grid; gap: 1rem; max-width: 54rem; }
+.chapter-offset { justify-self: end; }
+
+.chapter-number {
+  margin: 0;
+  color: rgb(103 232 249 / 25%);
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 850;
+  line-height: 0.8;
+}
+
+.story-chapter h2,
+.motivation-layout h2,
+.narrow-story h2,
+.split-story h2,
+.mentorship-layout h2,
+.closing-card h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.8rem, 5vw, 3.25rem);
+}
+
+.text-link { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.4rem; font-weight: 750; }
+
+.motivation-section,
+.principles-section,
+.mentorship-section,
+.learning-section {
+  border-block: 1px solid var(--color-border);
+  background: rgb(13 27 45 / 45%);
+}
+
+.motivation-layout,
+.split-story,
+.mentorship-layout,
+.learning-layout { display: grid; gap: clamp(2rem, 7vw, 5rem); }
+
+.pull-statement {
+  margin: 2rem 0 0;
+  padding: 1.5rem;
+  border-left: 0.2rem solid var(--color-accent);
+  background: linear-gradient(90deg, rgb(103 232 249 / 8%), transparent);
+  color: var(--color-text) !important;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 650;
+}
+
+.narrow-story { max-width: 50rem; }
+.principle-grid { display: grid; gap: 1rem; margin-top: 3rem; }
+
+.principle-grid article,
+.technology-groups article,
+.education-card,
+.development-card {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.principle-grid article > span { color: var(--color-accent); font-size: 0.75rem; font-weight: 800; }
+.principle-grid h2 { margin: 1rem 0 0.75rem; font-size: 1.2rem; }
+.principle-grid p, .technology-groups p, .education-card p { margin-bottom: 0; color: var(--color-text-muted); }
+
+.technology-groups { display: grid; gap: 1rem; }
+.technology-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.technology-heading h3 { margin: 0; font-size: 1rem; }
+.technology-heading span, .role-label {
+  display: inline-flex;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgb(103 232 249 / 30%);
+  border-radius: 999px;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.technology-list { margin-top: 1.25rem; }
+
+.ai-card {
+  padding: clamp(1.5rem, 6vw, 4rem);
+  border: 1px solid var(--color-border);
+  border-radius: clamp(1.25rem, 4vw, 2rem);
+  background: linear-gradient(135deg, rgb(129 140 248 / 10%), rgb(34 211 238 / 4%)), var(--color-surface);
+}
+
+.mentorship-reasons { padding-left: clamp(1rem, 4vw, 2rem); border-left: 1px solid rgb(103 232 249 / 35%); }
+.role-label { margin-bottom: 1rem; }
+
+.learning-layout > div { display: grid; gap: 1rem; }
+.education-card h2 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+.development-card ul { margin: 0; padding: 0; list-style: none; }
+.development-card li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--color-border); }
+.development-card li:last-child { border-bottom: 0; }
+.development-card strong { flex: 0 0 auto; color: var(--color-accent); font-size: 0.7rem; text-transform: uppercase; }
+
+.closing-section { text-align: center; }
+.closing-card {
+  padding: clamp(2rem, 8vw, 5rem);
+  border: 1px solid var(--color-border);
+  border-radius: clamp(1.25rem, 4vw, 2rem);
+  background: radial-gradient(circle at 85% 10%, rgb(129 140 248 / 24%), transparent 20rem), var(--color-surface);
+}
+.closing-card > p:not(.eyebrow) { max-width: 50rem; margin-inline: auto; }
+.closing-actions { justify-content: center; margin-top: 2rem; }
+
+@media (min-width: 48rem) {
+  .hero-layout { grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.7fr); }
+  .story-chapter { grid-template-columns: 7rem minmax(0, 1fr); }
+  .motivation-layout, .split-story, .mentorship-layout, .learning-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 30rem) {
+  .hero-actions .button, .closing-actions .button { width: 100%; }
+  .development-card li { align-items: flex-start; flex-direction: column; }
+}
+
+@keyframes glow-drift { to { transform: translate(3rem, 2rem) scale(1.08); } }

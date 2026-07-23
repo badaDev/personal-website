@@ -65,3 +65,26 @@ export interface ProfessionalDevelopmentItem {
   readonly name: string;
   readonly status?: 'In Progress';
 }
+
+export interface AboutStoryChapter {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly paragraphs: readonly string[];
+}
+
+export interface WorkPrinciple {
+  readonly title: string;
+  readonly description: string;
+}
+
+export interface EducationRecord {
+  readonly institution: string;
+  readonly qualification: string;
+}
+
+export interface MentorshipProfile {
+  readonly title: string;
+  readonly role: string;
+  readonly summary: string;
+  readonly motivation: readonly string[];
+}
