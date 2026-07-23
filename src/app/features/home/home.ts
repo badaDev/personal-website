@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import {
   CREDIBILITY_ITEMS,
-  EXPERIENCE_THEMES,
+  EMPLOYMENT_HISTORY,
   EXPERTISE,
   MENTORSHIP,
   PROFILE,
@@ -29,12 +29,12 @@ export class Home implements OnInit {
   protected readonly credibilityItems = CREDIBILITY_ITEMS;
   protected readonly expertise = EXPERTISE;
   protected readonly featuredProjects = PROJECTS.filter((project) => project.featured).slice(0, 3);
-  protected readonly experienceThemes = EXPERIENCE_THEMES;
+  protected readonly recentEmployment = EMPLOYMENT_HISTORY.slice(0, 3);
   protected readonly mentorship = MENTORSHIP;
 
   ngOnInit(): void {
-    const title = 'Nurudeen Bada | Software Engineer & Angular Specialist';
-    const description = 'Software Engineer specialising in Angular and TypeScript, with frontend, full-stack, fintech, SaaS, healthcare and developer mentorship experience.';
+    const title = 'Nurudeen Bada | Frontend Software Engineer';
+    const description = 'Frontend-focused Software Engineer specialising in Angular and TypeScript and expanding into full-stack development with Node.js and NestJS.';
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ property: 'og:title', content: title });

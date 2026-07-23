@@ -3,6 +3,7 @@
     <p>&copy; {{ currentYear }} Nurudeen Bada</p>
     <div class="footer-links">
       <a routerLink="/contact">Contact</a>
+      <a [href]="'mailto:' + email">Email</a>
       @for (link of socialLinks; track link.url) {
         <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
       }

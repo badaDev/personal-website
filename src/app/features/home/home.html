@@ -2,9 +2,9 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-layout">
     <div class="hero-copy">
-      <p class="eyebrow hero-eyebrow">Software Engineer · Angular specialist</p>
+      <p class="eyebrow hero-eyebrow">Frontend Software Engineer · Angular specialist</p>
       <h1 id="hero-title">I build dependable digital products with <span>Angular & TypeScript.</span></h1>
-      <p class="hero-lede">I’m {{ profile.name }}, a frontend-focused Software Engineer growing across the full stack, with experience in fintech, SaaS and healthcare-related projects.</p>
+      <p class="hero-lede">I’m {{ profile.name }}, a frontend-focused Software Engineer expanding into full-stack development with Node.js and NestJS.</p>
 
       <div class="hero-actions">
         <a class="button button-primary" routerLink="/projects">View my work <span aria-hidden="true">→</span></a>
@@ -12,15 +12,17 @@
       </div>
 
       <div class="hero-meta">
-        <div class="availability">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Location & availability: <strong>details to confirm</strong></span>
-        </div>
         <div class="social-links" aria-label="Professional profiles">
+          <a [href]="'mailto:' + profile.email" aria-label="Email Nurudeen Bada">
+            <span class="social-mark" aria-hidden="true">&#64;</span>
+            <span>Email</span>
+          </a>
           @for (link of socialLinks; track link.url) {
             <a [href]="link.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="link.label + ' profile'">
               @if (link.label === 'LinkedIn') {
                 <span class="social-mark" aria-hidden="true">in</span>
+              } @else {
+                <span class="social-mark" aria-hidden="true">GH</span>
               }
               <span>{{ link.label }}</span>
             </a>
@@ -98,7 +100,7 @@
       <app-section-heading
         eyebrow="Featured projects"
         heading="Selected work and project stories."
-        description="One preserved project is available now. Additional featured work is clearly marked for content review." />
+        description="Full-stack applications built with Angular, TypeScript and a growing backend toolkit." />
       <a class="text-link" routerLink="/projects">View all projects <span aria-hidden="true">→</span></a>
     </div>
     <div class="project-grid">
@@ -114,13 +116,13 @@
     <app-section-heading
       eyebrow="Experience preview"
       heading="Product engineering across complex domains."
-      description="High-level experience is represented here without inventing employers, dates or outcomes." />
+      description="A concise view of my most recent frontend engineering roles." />
     <div class="experience-list">
-      @for (item of experienceThemes; track item.sector) {
+      @for (item of recentEmployment; track item.company) {
         <article>
-          <span>{{ item.sector }}</span>
-          <p>{{ item.summary }}</p>
-          <small>{{ item.detailStatus }}</small>
+          <span>{{ item.company }}</span>
+          <p>{{ item.role }}</p>
+          <small>{{ item.dates }}</small>
         </article>
       }
       <a class="button button-secondary" routerLink="/experience">Explore experience <span aria-hidden="true">→</span></a>
@@ -147,10 +149,12 @@
   <div class="container cta-card">
     <p class="eyebrow">Let’s build something valuable</p>
     <h2 id="cta-title">Open to meaningful engineering conversations.</h2>
-    <p>For Software Engineering opportunities, Angular projects, freelance work or collaboration, connect with me through the verified channel below.</p>
+    <p>For Software Engineering opportunities, Angular projects, freelance work or collaboration, get in touch or connect through my professional profiles.</p>
     <div class="cta-actions">
-      <a class="button button-primary" [href]="socialLinks[0].url" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
-      <span class="contact-placeholder">Email and GitHub details pending</span>
+      <a class="button button-primary" [href]="'mailto:' + profile.email">Email me <span aria-hidden="true">→</span></a>
+      @for (link of socialLinks; track link.url) {
+        <a class="button button-secondary" [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>
+      }
     </div>
   </div>
 </section>

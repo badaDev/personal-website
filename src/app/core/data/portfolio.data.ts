@@ -1,5 +1,5 @@
 import {
-  ExperienceTheme,
+  EmploymentRecord,
   ExpertiseItem,
   PortfolioProfile,
   PortfolioProject,
@@ -8,75 +8,60 @@ import {
 
 export const PROFILE: PortfolioProfile = {
   name: 'Nurudeen Bada',
-  role: 'Software Engineer · Angular & TypeScript Specialist',
+  role: 'Frontend-focused Software Engineer expanding into full-stack development with Node.js and NestJS',
   biography: [
     'Nurudeen Olanrewaju Bada is a frontend developer focused on Angular. His move into technology was driven by an interest in practical, fast-moving software development.',
     'He developed his foundations through independent study and a frontend development bootcamp, then built further experience through freelance client projects and employment opportunities.',
   ],
-  email: null,
-  githubUrl: null,
+  email: 'nolanrewaju@gmail.com',
+  githubUrl: 'https://github.com/badaDev',
   cvPath: null,
-  location: null,
-  availability: null,
 };
 
 export const SOCIAL_LINKS: readonly SocialLink[] = [
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/nurudeen-bada-457a43200/',
-  },
+  { label: 'GitHub', url: PROFILE.githubUrl },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nurudeen-bada-457a43200/' },
 ];
 
 export const PROJECTS: readonly PortfolioProject[] = [
   {
-    name: 'Spaxx Exam Portal',
-    description: 'An exam portal that lets users take short subject-based assessments and receive a percentage grade when they finish.',
-    technologies: ['React', 'HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://spakxx-exam-portal.netlify.app/',
+    name: 'ShiftPay Tracker',
+    description: 'A full-stack shift and earnings management application that helps workers record shifts, calculate working hours and track expected pay, including support for overnight shifts and unpaid breaks.',
+    technologies: ['Angular', 'NestJS', 'TypeScript', 'PostgreSQL', 'Prisma'],
+    liveUrl: 'https://shiftpay-tracker.vercel.app/login',
     repositoryUrl: null,
-    imagePath: null,
-    legacyImageUrl: 'https://firebasestorage.googleapis.com/v0/b/portfolio-website-f60d7.appspot.com/o/projectImages%2FScreenshot%20(244).png_1681058871061?alt=media&token=c5c1183f-a0f6-4891-bd03-8a5d66745cb6',
+    imagePath: '/assets/images/projects/shiftpay-tracker-2.webp',
+    imageAlt: 'ShiftPay Tracker sign-in screen with a pay-tracking form on a dark blue and green background',
+    imageWidth: 1920,
+    imageHeight: 885,
     caseStudyUrl: null,
-    status: 'published',
+    status: 'available',
     featured: true,
   },
   {
-    name: 'Featured project — details needed',
-    description: 'Project summary, responsibilities and supporting links require review before publication.',
-    technologies: [],
+    name: 'O2 Appointment Booking System',
+    description: 'A full-stack appointment booking and management platform for handling services, customers, availability and appointments.',
+    technologies: ['Angular', 'NestJS', 'TypeScript', 'PostgreSQL', 'Prisma'],
     liveUrl: null,
     repositoryUrl: null,
-    imagePath: null,
-    legacyImageUrl: null,
     caseStudyUrl: null,
-    status: 'content-needed',
+    status: 'coming-soon',
     featured: true,
   },
   {
-    name: 'Featured project — details needed',
-    description: 'Project summary, responsibilities and supporting links require review before publication.',
+    name: 'Expense Tracker',
+    description: 'A full-stack expense tracking application for recording transactions, organising spending and reviewing personal financial activity.',
     technologies: [],
     liveUrl: null,
     repositoryUrl: null,
-    imagePath: null,
-    legacyImageUrl: null,
     caseStudyUrl: null,
-    status: 'content-needed',
+    status: 'coming-soon',
     featured: true,
   },
 ];
 
 export const SKILLS: readonly string[] = [
-  'Angular',
-  'TypeScript',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'React',
-  'Firebase',
-  'Git',
-  'Figma',
-  'Ionic',
+  'Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'React', 'Firebase', 'Git', 'Figma', 'Ionic',
 ];
 
 export const CREDIBILITY_ITEMS: readonly string[] = [
@@ -94,25 +79,21 @@ export const EXPERTISE: readonly ExpertiseItem[] = [
   { name: 'HTML, CSS & SCSS', summary: 'Responsive, accessible interfaces built from strong web foundations.', level: 'established' },
   { name: 'Ionic', summary: 'Cross-platform interface development using familiar Angular workflows.', level: 'established' },
   { name: 'Git', summary: 'Version-controlled delivery and collaborative development workflows.', level: 'established' },
-  { name: 'Node.js', summary: 'Expanding backend capability for full-stack JavaScript applications.', level: 'developing' },
-  { name: 'Next.js', summary: 'Developing modern full-stack React and server-rendering capability.', level: 'developing' },
+  { name: 'Node.js', summary: 'Expanding backend capability for full-stack JavaScript and TypeScript applications.', level: 'developing' },
+  { name: 'NestJS', summary: 'Building full-stack projects with the TypeScript-based Node.js framework.', level: 'developing' },
 ];
 
-export const EXPERIENCE_THEMES: readonly ExperienceTheme[] = [
-  {
-    sector: 'Fintech',
-    summary: 'Enterprise frontend engineering with an emphasis on dependable Angular application development.',
-    detailStatus: 'Employer, role dates and project detail to confirm.',
-  },
-  {
-    sector: 'SaaS & healthcare',
-    summary: 'Application development experience across SaaS and healthcare-related project contexts.',
-    detailStatus: 'Project scope and responsibilities to confirm.',
-  },
+export const EMPLOYMENT_HISTORY: readonly EmploymentRecord[] = [
+  { company: 'Blockchain Advisors Ltd', role: 'Frontend Software Engineer (Contract)', dates: 'June 2026 – Present' },
+  { company: 'Techforce Inc Ltd', role: 'Frontend Engineer (Project-Based)', dates: 'October 2025 – May 2026' },
+  { company: 'BAfashion', role: 'Frontend Developer', dates: 'March 2025 – August 2025' },
+  { company: 'Zarttech', role: 'Angular Developer', dates: 'March 2024 – March 2025' },
+  { company: 'Global Accelerex Ltd', role: 'Software Developer', dates: 'March 2022 – March 2024' },
+  { company: 'Jbitss Tech', role: 'Frontend Developer', dates: 'March 2019 – February 2022' },
 ];
 
 export const MENTORSHIP = {
   title: 'Frontend Engineering Mentorship Community',
-  summary: 'A community focused on helping beginner developers build strong frontend foundations through teaching, mentoring and shared learning.',
-  role: 'Founder & mentor',
+  summary: 'I founded the Frontend Engineering Mentorship Community to help beginner developers build strong foundations in HTML, CSS, JavaScript, Git and Angular through structured lessons, practical assignments and ongoing guidance.',
+  role: 'Founder and Lead Mentor',
 } as const;

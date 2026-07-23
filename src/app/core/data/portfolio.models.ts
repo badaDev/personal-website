@@ -9,10 +9,12 @@ export interface PortfolioProject {
   readonly technologies: readonly string[];
   readonly liveUrl: string | null;
   readonly repositoryUrl: string | null;
-  readonly imagePath: string | null;
-  readonly legacyImageUrl: string | null;
+  readonly imagePath?: string;
+  readonly imageAlt?: string;
+  readonly imageWidth?: number;
+  readonly imageHeight?: number;
   readonly caseStudyUrl: string | null;
-  readonly status: 'published' | 'content-needed';
+  readonly status: 'available' | 'coming-soon';
   readonly featured: boolean;
 }
 
@@ -20,11 +22,9 @@ export interface PortfolioProfile {
   readonly name: string;
   readonly role: string;
   readonly biography: readonly string[];
-  readonly email: string | null;
-  readonly githubUrl: string | null;
+  readonly email: string;
+  readonly githubUrl: string;
   readonly cvPath: string | null;
-  readonly location: string | null;
-  readonly availability: string | null;
 }
 
 export interface ExpertiseItem {
@@ -33,8 +33,8 @@ export interface ExpertiseItem {
   readonly level: 'established' | 'developing';
 }
 
-export interface ExperienceTheme {
-  readonly sector: string;
-  readonly summary: string;
-  readonly detailStatus: string;
+export interface EmploymentRecord {
+  readonly company: string;
+  readonly role: string;
+  readonly dates: string;
 }

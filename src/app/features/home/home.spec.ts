@@ -42,15 +42,31 @@ describe('Home', () => {
     fixture.detectChanges();
 
     expect(TestBed.inject(Title).getTitle()).toContain('Software Engineer');
-    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toContain('Angular Specialist');
+    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toContain('Frontend Software Engineer');
   });
 
-  it('does not show unverified CV, GitHub or email links', () => {
+  it('shows verified contact links without a CV or profile placeholders', () => {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
-    const text = (fixture.nativeElement as HTMLElement).textContent ?? '';
+    const element = fixture.nativeElement as HTMLElement;
+    const text = element.textContent ?? '';
 
     expect(text).not.toContain('Download CV');
-    expect(text).toContain('Email and GitHub details pending');
+    expect(text).not.toContain('details to confirm');
+    expect(element.querySelector('a[href="mailto:nolanrewaju@gmail.com"]')).toBeTruthy();
+    expect(element.querySelector('a[href="https://github.com/badaDev"]')).toBeTruthy();
+  });
+
+  it('renders ShiftPay and intentional coming-soon project states', () => {
+    const fixture = TestBed.createComponent(Home);
+    fixture.detectChanges();
+    const element = fixture.nativeElement as HTMLElement;
+    const image = element.querySelector('img[src="/assets/images/projects/shiftpay-tracker-2.webp"]');
+
+    expect(image?.getAttribute('loading')).toBe('lazy');
+    expect(element.textContent).toContain('ShiftPay Tracker');
+    expect(element.querySelectorAll('.coming-soon-card')).toHaveLength(2);
+    expect(element.querySelector('a[href="https://shiftpay-tracker.vercel.app/login"]')?.getAttribute('rel')).toBe('noopener noreferrer');
+    expect(element.textContent).not.toContain('Case study');
   });
 });

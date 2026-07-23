@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SOCIAL_LINKS } from '../../data/portfolio.data';
+import { PROFILE, SOCIAL_LINKS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-footer',
@@ -11,4 +11,5 @@ import { SOCIAL_LINKS } from '../../data/portfolio.data';
 export class Footer {
   protected readonly currentYear = new Date().getFullYear();
   protected readonly socialLinks = SOCIAL_LINKS;
+  protected readonly email = PROFILE.email;
 }

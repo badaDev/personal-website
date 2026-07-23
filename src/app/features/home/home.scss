@@ -76,7 +76,6 @@
 .hero-actions,
 .hero-meta,
 .social-links,
-.availability,
 .cta-actions {
   display: flex;
   flex-wrap: wrap;
@@ -94,22 +93,8 @@
   font-size: 0.8125rem;
 }
 
-.availability,
 .social-links {
   gap: 0.625rem;
-}
-
-.availability strong {
-  color: var(--color-text);
-  font-weight: 650;
-}
-
-.status-dot {
-  width: 0.55rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #fbbf24;
-  box-shadow: 0 0 0 0.25rem rgb(251 191 36 / 12%);
 }
 
 .social-links a {
@@ -339,7 +324,7 @@
 }
 
 .experience-list small {
-  color: #fbbf24;
+  color: var(--color-text-muted);
 }
 
 .mentorship-card,
@@ -414,11 +399,6 @@
 .cta-actions {
   gap: 1rem;
   margin-top: 2rem;
-}
-
-.contact-placeholder {
-  color: #fbbf24;
-  font-size: 0.8125rem;
 }
 
 @keyframes hero-enter {
