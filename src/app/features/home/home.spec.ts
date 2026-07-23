@@ -41,8 +41,8 @@ describe('Home', () => {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
 
-    expect(TestBed.inject(Title).getTitle()).toContain('Software Engineer');
-    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toContain('Frontend Software Engineer');
+    expect(TestBed.inject(Title).getTitle()).toBe('Home | Nurudeen O. Bada');
+    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toBe('Home | Nurudeen O. Bada');
   });
 
   it('shows verified contact links without a CV or profile placeholders', () => {

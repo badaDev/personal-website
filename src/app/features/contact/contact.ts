@@ -62,7 +62,7 @@ export class Contact implements OnInit {
   });
 
   ngOnInit(): void {
-    const title = 'Contact Nurudeen O. Bada | Software Engineering';
+    const title = 'Contact | Nurudeen O. Bada';
     const description = 'Contact Nurudeen O. Bada to discuss software engineering, Angular, TypeScript, full-stack product development and collaboration.';
 
     this.title.setTitle(title);

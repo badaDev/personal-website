@@ -23,8 +23,8 @@ export class Projects implements OnInit {
   protected readonly activeProjects = PROJECTS.filter((project) => project.status === 'active-development');
 
   ngOnInit(): void {
-    const title = 'Software Engineering Projects | Nurudeen Bada';
-    const description = 'Explore Angular and TypeScript projects by Nurudeen Bada, including full-stack applications developed with Node.js and NestJS.';
+    const title = 'Projects | Nurudeen O. Bada';
+    const description = 'Explore ShiftPay Tracker, O2 Appointment Booking System and Expense Tracker—Angular and TypeScript projects developed with Node.js and NestJS.';
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });

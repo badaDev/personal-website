@@ -99,13 +99,13 @@
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
 }
 
-.screenshot-gallery {
+.screenshot-showcase {
   display: grid;
   gap: 1rem;
   margin-bottom: clamp(3rem, 8vw, 6rem);
 }
 
-.screenshot-gallery figure {
+.screenshot-showcase figure {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -114,7 +114,7 @@
   box-shadow: var(--shadow-soft);
 }
 
-.screenshot-gallery img {
+.screenshot-showcase img {
   display: block;
   width: 100%;
   height: auto;
@@ -264,7 +264,7 @@
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
-  .screenshot-gallery {
+  .screenshot-showcase {
     grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.85fr);
     align-items: center;
   }

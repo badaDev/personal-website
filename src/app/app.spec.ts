@@ -23,5 +23,7 @@ describe('App', () => {
     expect(compiled.querySelector('app-header')).toBeTruthy();
     expect(compiled.querySelector('main#main-content')).toBeTruthy();
     expect(compiled.querySelector('app-footer')).toBeTruthy();
+    expect(compiled.querySelector('.skip-link')?.getAttribute('href')).toBe('#main-content');
+    expect(compiled.querySelector('main#main-content')?.getAttribute('tabindex')).toBe('-1');
   });
 });

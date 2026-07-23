@@ -129,10 +129,6 @@ export const PROJECTS: readonly PortfolioProject[] = [
   },
 ];
 
-export const SKILLS: readonly string[] = [
-  'Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'React', 'Firebase', 'Git', 'Figma', 'Ionic',
-];
-
 export const CREDIBILITY_ITEMS: readonly string[] = [
   'Angular development',
   'Enterprise fintech experience',
@@ -182,6 +178,7 @@ export const EXPERIENCE_TECHNOLOGY_GROUPS: readonly TechnologyGroup[] = [
 ];
 
 export const PROFESSIONAL_DEVELOPMENT: readonly ProfessionalDevelopmentItem[] = [
+  { name: 'Nodejs & Nestjs', status: 'In Progress' },
   { name: 'C# and .NET Development', status: 'In Progress' },
   { name: 'Angular: The Complete Guide' },
   { name: 'Angular Material In-Depth' },
@@ -212,7 +209,7 @@ export const ABOUT_STORY: readonly AboutStoryChapter[] = [
     title: 'My route into engineering was a deliberate career transition.',
     paragraphs: [
       'I studied Environmental Biology & Fisheries at Adekunle Ajasin University. My degree was not related to computing, but I do not see that as something to hide. It is part of a journey that taught me careers do not always move in a straight line.',
-      'Moving into software engineering meant starting again as a beginner. I learned HTML, CSS, JavaScript, Bootstrap and responsive web development through self-directed study, consistency and practice. Later software-development training introduced React, and each stage gave me enough confidence to take on the next one.',
+      'Moving into software engineering meant starting again as a beginner. I learned HTML, CSS, JavaScript, Bootstrap and responsive web development through self-directed study, consistency and practice. Later software-development training introduced Angular & React, and each stage gave me enough confidence to take on the next one.',
     ],
   },
   {

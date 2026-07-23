@@ -1,8 +1,17 @@
 <footer>
   <div class="container footer-inner">
-    <p>&copy; {{ currentYear }} Nurudeen Bada</p>
-    <div class="footer-links">
+    <div class="footer-identity">
+      <strong>Nurudeen O. Bada</strong>
+      <span>Frontend-focused Software Engineer</span>
+      <small>&copy; {{ currentYear }} Nurudeen O. Bada</small>
+    </div>
+    <nav class="footer-routes" aria-label="Footer navigation">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/projects">Projects</a>
       <a routerLink="/contact">Contact</a>
+    </nav>
+    <div class="footer-links" aria-label="Contact links">
       <a [href]="'mailto:' + email">Email</a>
       @for (link of socialLinks; track link.url) {
         <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>

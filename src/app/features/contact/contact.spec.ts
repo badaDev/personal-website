@@ -138,9 +138,9 @@ describe('Contact', () => {
   it('sets complete Contact-page metadata', () => {
     createContact();
 
-    expect(TestBed.inject(Title).getTitle()).toBe('Contact Nurudeen O. Bada | Software Engineering');
+    expect(TestBed.inject(Title).getTitle()).toBe('Contact | Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("property='og:description'")?.content).toContain('Angular');
-    expect(TestBed.inject(Meta).getTag("name='twitter:title'")?.content).toContain('Contact Nurudeen');
+    expect(TestBed.inject(Meta).getTag("name='twitter:title'")?.content).toBe('Contact | Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("name='twitter:description'")?.content).toContain('collaboration');
   });
 });

@@ -86,8 +86,8 @@ describe('Experience', () => {
     const fixture = TestBed.createComponent(Experience);
     fixture.detectChanges();
 
-    expect(TestBed.inject(Title).getTitle()).toBe('Software Engineering Experience | Nurudeen Bada');
-    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toContain('Software Engineering Experience');
+    expect(TestBed.inject(Title).getTitle()).toBe('Experience | Nurudeen O. Bada');
+    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toBe('Experience | Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("name='twitter:description'")?.content).toContain('Angular');
   });
 });

@@ -111,7 +111,7 @@ describe('About', () => {
   it('sets complete About-page metadata', () => {
     render();
 
-    expect(TestBed.inject(Title).getTitle()).toBe('About Nurudeen O. Bada | Software Engineering Journey');
+    expect(TestBed.inject(Title).getTitle()).toBe('About | Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("property='og:description'")?.content).toContain('full-stack development');
     expect(TestBed.inject(Meta).getTag("name='twitter:title'")?.content).toContain('Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("name='twitter:description'")?.content).toContain('mentorship');

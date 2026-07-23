@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<main>
+<div class="page-content">
   <section id="featured-project" class="page-section featured-project" appReveal aria-labelledby="shiftpay-title">
     <div class="container">
       <div class="featured-heading">
@@ -27,7 +27,7 @@
         }
       </div>
 
-      <div class="screenshot-gallery" aria-label="ShiftPay Tracker screenshots">
+      <div class="screenshot-showcase" aria-label="ShiftPay Tracker screenshots">
         @for (screenshot of shiftPay.screenshots; track screenshot.path; let first = $first) {
           <figure [class.screenshot-primary]="first">
             <img [src]="screenshot.path" [alt]="screenshot.alt" [width]="screenshot.width" [height]="screenshot.height" loading="lazy">
@@ -125,4 +125,4 @@
       </div>
     </div>
   </section>
-</main>
+</div>

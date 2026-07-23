@@ -1,0 +1,29 @@
+:host { display: block; overflow: clip; }
+
+.not-found {
+  position: relative;
+  display: grid;
+  min-height: min(46rem, calc(100svh - 10rem));
+  place-items: center;
+  overflow: hidden;
+}
+
+.error-glow {
+  position: absolute;
+  width: min(35rem, 90vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(129 140 248 / 18%), rgb(34 211 238 / 6%) 45%, transparent 70%);
+  filter: blur(1rem);
+  pointer-events: none;
+}
+
+.not-found-content { position: relative; max-width: 48rem; padding-block: 5rem; text-align: center; }
+.error-code { margin: 0 0 -1.5rem; color: rgb(103 232 249 / 15%); font-size: clamp(7rem, 25vw, 14rem); font-weight: 900; line-height: 0.8; }
+.not-found-content h1 { margin-bottom: 1.25rem; font-size: clamp(2.25rem, 7vw, 4rem); }
+.not-found-content .lede { max-width: 40rem; margin-inline: auto; }
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 2rem; }
+
+@media (max-width: 30rem) {
+  .not-found-actions .button { width: 100%; }
+}

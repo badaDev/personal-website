@@ -27,8 +27,8 @@ export class Experience implements OnInit {
   protected readonly profile = PROFILE;
 
   ngOnInit(): void {
-    const title = 'Software Engineering Experience | Nurudeen Bada';
-    const description = 'Career history and technology experience for Nurudeen Bada, a frontend-focused Software Engineer working with Angular, TypeScript, Node.js and NestJS.';
+    const title = 'Experience | Nurudeen O. Bada';
+    const description = 'Explore Nurudeen O. Bada’s professional timeline, Angular and TypeScript foundation, and continued development with Node.js, NestJS, C# and .NET.';
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });

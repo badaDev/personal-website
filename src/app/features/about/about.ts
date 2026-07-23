@@ -37,7 +37,7 @@ export class About implements OnInit {
   protected readonly professionalDevelopment = PROFESSIONAL_DEVELOPMENT;
 
   ngOnInit(): void {
-    const title = 'About Nurudeen O. Bada | Software Engineering Journey';
+    const title = 'About | Nurudeen O. Bada';
     const description = 'The unconventional path of Nurudeen O. Bada into Angular and TypeScript engineering, full-stack development with Node.js and NestJS, and frontend mentorship.';
 
     this.title.setTitle(title);

@@ -33,8 +33,8 @@ export class Home implements OnInit {
   protected readonly mentorship = MENTORSHIP;
 
   ngOnInit(): void {
-    const title = 'Nurudeen Bada | Frontend Software Engineer';
-    const description = 'Frontend-focused Software Engineer specialising in Angular and TypeScript and expanding into full-stack development with Node.js and NestJS.';
+    const title = 'Home | Nurudeen O. Bada';
+    const description = 'Meet Nurudeen O. Bada, a frontend-focused Software Engineer specialising in Angular and TypeScript, with featured full-stack projects and mentorship work.';
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ property: 'og:title', content: title });

@@ -52,8 +52,8 @@ describe('Projects', () => {
     const fixture = TestBed.createComponent(Projects);
     fixture.detectChanges();
 
-    expect(TestBed.inject(Title).getTitle()).toBe('Software Engineering Projects | Nurudeen Bada');
-    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toContain('Software Engineering Projects');
+    expect(TestBed.inject(Title).getTitle()).toBe('Projects | Nurudeen O. Bada');
+    expect(TestBed.inject(Meta).getTag("property='og:title'")?.content).toBe('Projects | Nurudeen O. Bada');
     expect(TestBed.inject(Meta).getTag("name='twitter:description'")?.content).toContain('Node.js and NestJS');
   });
 });
