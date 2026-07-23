@@ -94,6 +94,52 @@ a {
   max-width: 48rem;
 }
 
+.button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.125rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-0.125rem);
+}
+
+.button-primary {
+  background: var(--gradient-accent);
+  color: #07111f;
+  box-shadow: 0 0.75rem 2rem rgb(34 211 238 / 15%);
+}
+
+.button-secondary {
+  border-color: var(--color-border);
+  background: rgb(255 255 255 / 3%);
+  color: var(--color-text);
+}
+
+.button-secondary:hover {
+  border-color: rgb(103 232 249 / 45%);
+  background: rgb(103 232 249 / 6%);
+}
+
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
 .eyebrow {
   margin-bottom: var(--space-2);
   color: var(--color-accent);
@@ -137,5 +183,10 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
   }
 }

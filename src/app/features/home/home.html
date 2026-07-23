@@ -1,7 +1,156 @@
-<section class="page-section">
-  <div class="container page-intro">
-    <p class="eyebrow">Portfolio foundation</p>
-    <h1>{{ profile.name }}</h1>
-    <p class="lede">{{ profile.role }} specialising in Angular and modern web applications. The full homepage design will be developed in the next approved stage.</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow">Software Engineer · Angular specialist</p>
+      <h1 id="hero-title">I build dependable digital products with <span>Angular & TypeScript.</span></h1>
+      <p class="hero-lede">I’m {{ profile.name }}, a frontend-focused Software Engineer growing across the full stack, with experience in fintech, SaaS and healthcare-related projects.</p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" routerLink="/projects">View my work <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" routerLink="/contact">Contact me</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="availability">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Location & availability: <strong>details to confirm</strong></span>
+        </div>
+        <div class="social-links" aria-label="Professional profiles">
+          @for (link of socialLinks; track link.url) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="link.label + ' profile'">
+              @if (link.label === 'LinkedIn') {
+                <span class="social-mark" aria-hidden="true">in</span>
+              }
+              <span>{{ link.label }}</span>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="portrait-wrap">
+      <div class="portrait-frame">
+        <img
+          src="/assets/images/profile/nurudeen-bada-profile.jpeg"
+          width="1142"
+          height="1600"
+          fetchpriority="high"
+          alt="Black-and-white portrait of Nurudeen Bada wearing glasses and looking towards the camera">
+      </div>
+      <div class="portrait-label">
+        <span>Frontend focus</span>
+        <strong>Full-stack growth</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="credibility" aria-label="Professional focus">
+  <div class="container credibility-grid">
+    @for (item of credibilityItems; track item; let index = $index) {
+      <div class="credibility-item"><span>0{{ index + 1 }}</span><strong>{{ item }}</strong></div>
+    }
+  </div>
+</section>
+
+<section class="page-section expertise-section" appReveal>
+  <div class="container">
+    <app-section-heading
+      eyebrow="Selected expertise"
+      heading="Engineering capability grounded in modern frontend delivery."
+      description="Established Angular expertise, supported by deliberate growth into a broader full-stack toolkit." />
+
+    <div class="expertise-groups">
+      <div>
+        <h3>Established</h3>
+        <div class="expertise-grid">
+          @for (item of expertise; track item.name) {
+            @if (item.level === 'established') {
+              <article class="expertise-card">
+                <div class="expertise-icon" aria-hidden="true">{{ item.name.charAt(0) }}</div>
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.summary }}</p>
+              </article>
+            }
+          }
+        </div>
+      </div>
+      <div class="growth-panel">
+        <p class="growth-label">In active development</p>
+        <h3>Full-stack growth</h3>
+        @for (item of expertise; track item.name) {
+          @if (item.level === 'developing') {
+            <div class="growth-item">
+              <app-technology-badge [label]="item.name" />
+              <p>{{ item.summary }}</p>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section projects-section" appReveal>
+  <div class="container">
+    <div class="section-heading-row">
+      <app-section-heading
+        eyebrow="Featured projects"
+        heading="Selected work and project stories."
+        description="One preserved project is available now. Additional featured work is clearly marked for content review." />
+      <a class="text-link" routerLink="/projects">View all projects <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="project-grid">
+      @for (project of featuredProjects; track $index) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section experience-section" appReveal>
+  <div class="container experience-layout">
+    <app-section-heading
+      eyebrow="Experience preview"
+      heading="Product engineering across complex domains."
+      description="High-level experience is represented here without inventing employers, dates or outcomes." />
+    <div class="experience-list">
+      @for (item of experienceThemes; track item.sector) {
+        <article>
+          <span>{{ item.sector }}</span>
+          <p>{{ item.summary }}</p>
+          <small>{{ item.detailStatus }}</small>
+        </article>
+      }
+      <a class="button button-secondary" routerLink="/experience">Explore experience <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section mentorship-section" appReveal>
+  <div class="container mentorship-card">
+    <div class="mentorship-copy">
+      <p class="eyebrow">Mentorship & community</p>
+      <span class="role-chip">{{ mentorship.role }}</span>
+      <h2>{{ mentorship.title }}</h2>
+      <p>{{ mentorship.summary }}</p>
+      <a class="text-link" routerLink="/about">Discover the community story <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="community-visual" aria-hidden="true">
+      <span>Learn</span><span>Build</span><span>Mentor</span>
+    </div>
+  </div>
+</section>
+
+<section class="page-section final-cta" appReveal aria-labelledby="cta-title">
+  <div class="container cta-card">
+    <p class="eyebrow">Let’s build something valuable</p>
+    <h2 id="cta-title">Open to meaningful engineering conversations.</h2>
+    <p>For Software Engineering opportunities, Angular projects, freelance work or collaboration, connect with me through the verified channel below.</p>
+    <div class="cta-actions">
+      <a class="button button-primary" [href]="socialLinks[0].url" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+      <span class="contact-placeholder">Email and GitHub details pending</span>
+    </div>
   </div>
 </section>

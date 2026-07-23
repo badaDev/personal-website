@@ -11,6 +11,9 @@ export interface PortfolioProject {
   readonly repositoryUrl: string | null;
   readonly imagePath: string | null;
   readonly legacyImageUrl: string | null;
+  readonly caseStudyUrl: string | null;
+  readonly status: 'published' | 'content-needed';
+  readonly featured: boolean;
 }
 
 export interface PortfolioProfile {
@@ -20,4 +23,18 @@ export interface PortfolioProfile {
   readonly email: string | null;
   readonly githubUrl: string | null;
   readonly cvPath: string | null;
+  readonly location: string | null;
+  readonly availability: string | null;
+}
+
+export interface ExpertiseItem {
+  readonly name: string;
+  readonly summary: string;
+  readonly level: 'established' | 'developing';
+}
+
+export interface ExperienceTheme {
+  readonly sector: string;
+  readonly summary: string;
+  readonly detailStatus: string;
 }

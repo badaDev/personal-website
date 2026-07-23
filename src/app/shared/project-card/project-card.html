@@ -1,0 +1,36 @@
+<article class="project-card" [class.placeholder-card]="project().status === 'content-needed'">
+  <div class="project-visual" aria-hidden="true">
+    <span>{{ project().status === 'content-needed' ? 'Content needed' : project().name.charAt(0) }}</span>
+  </div>
+  <div class="project-content">
+    <div class="project-status">{{ project().status === 'content-needed' ? 'Requires review' : 'Featured project' }}</div>
+    <h3>{{ project().name }}</h3>
+    <p>{{ project().description }}</p>
+
+    @if (project().technologies.length) {
+      <div class="technology-list" aria-label="Technologies used">
+        @for (technology of project().technologies; track technology) {
+          <app-technology-badge [label]="technology" />
+        }
+      </div>
+    }
+
+    <div class="project-actions">
+      @if (project().liveUrl) {
+        <a [href]="project().liveUrl" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">↗</span></a>
+      } @else {
+        <span class="unavailable">Live link unavailable</span>
+      }
+      @if (project().repositoryUrl) {
+        <a [href]="project().repositoryUrl" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      } @else {
+        <span class="unavailable">Repository unavailable</span>
+      }
+      @if (project().caseStudyUrl) {
+        <a [href]="project().caseStudyUrl">Case study <span aria-hidden="true">→</span></a>
+      } @else {
+        <span class="unavailable">Case study planned</span>
+      }
+    </div>
+  </div>
+</article>
