@@ -1,5 +1,6 @@
 import {
   AboutStoryChapter,
+  ContactMethod,
   EducationRecord,
   EmploymentRecord,
   ExpertiseItem,
@@ -27,6 +28,30 @@ export const PROFILE: PortfolioProfile = {
 export const SOCIAL_LINKS: readonly SocialLink[] = [
   { label: 'GitHub', url: PROFILE.githubUrl },
   { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nurudeen-bada-457a43200/' },
+];
+
+export const CONTACT_METHODS: readonly ContactMethod[] = [
+  {
+    label: 'Email',
+    value: PROFILE.email,
+    url: `mailto:${PROFILE.email}`,
+    description: 'Open your email application to write to me directly.',
+    external: false,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Professional profile',
+    url: SOCIAL_LINKS.find((link) => link.label === 'LinkedIn')!.url,
+    description: 'Connect with me and view my professional profile.',
+    external: true,
+  },
+  {
+    label: 'GitHub',
+    value: '@badaDev',
+    url: PROFILE.githubUrl,
+    description: 'Explore my public development profile and repositories.',
+    external: true,
+  },
 ];
 
 export const PROJECTS: readonly PortfolioProject[] = [

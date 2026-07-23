@@ -1,1 +1,107 @@
-<section class="page-section"><div class="container page-intro"><p class="eyebrow">Contact</p><h1>Start a conversation</h1><p class="lede">Verified contact details and the final contact experience will be added here.</p></div></section>
+<section class="contact-hero" aria-labelledby="contact-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">Start a conversation</p>
+    <h1 id="contact-title">Let’s talk about thoughtful software.</h1>
+    <p class="lede">Whether you would like to discuss a software engineering opportunity, a project, collaboration or something you have seen in my portfolio, you are welcome to get in touch.</p>
+  </div>
+</section>
+
+<main>
+  <section class="page-section contact-section" appReveal>
+    <div class="container contact-layout">
+      <div class="contact-intro">
+        <app-section-heading
+          eyebrow="Contact options"
+          heading="Choose the channel that works for you."
+          description="I’m interested in thoughtful conversations about frontend engineering, Angular and TypeScript, full-stack product development, software collaboration, and developer education." />
+
+        <div class="contact-methods">
+          @for (method of contactMethods; track method.url) {
+            <a
+              class="contact-method"
+              [href]="method.url"
+              [attr.target]="method.external ? '_blank' : null"
+              [attr.rel]="method.external ? 'noopener noreferrer' : null"
+              [attr.aria-label]="method.external ? 'Open ' + method.label + ' in a new tab' : 'Open your email application to email Nurudeen'">
+              <span class="method-mark" aria-hidden="true">{{ method.label === 'Email' ? '@' : method.label === 'LinkedIn' ? 'in' : 'GH' }}</span>
+              <span>
+                <strong>{{ method.label }}</strong>
+                <small>{{ method.value }}</small>
+                <small>{{ method.description }}</small>
+              </span>
+              <span class="method-arrow" aria-hidden="true">{{ method.external ? '↗' : '→' }}</span>
+            </a>
+          }
+        </div>
+
+        <aside class="process-note">
+          <h2>What happens when you submit?</h2>
+          <p>This website does not store your details. The form prepares a draft in your email application so you can review it before choosing to send it.</p>
+          <p>If your email application does not open, email me directly at <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>.</p>
+        </aside>
+      </div>
+
+      <div class="form-panel">
+        <p class="eyebrow">Prepare an email</p>
+        <h2>Tell me what you would like to discuss.</h2>
+        <p class="form-explanation">Complete the fields below and I’ll prepare an email in your configured email application. Nothing is sent automatically.</p>
+
+        <form [formGroup]="form" (ngSubmit)="prepareEmail()" novalidate>
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" type="text" formControlName="name" autocomplete="name" maxlength="80"
+              [attr.aria-invalid]="showError('name')" aria-describedby="name-hint name-error">
+            <small id="name-hint">How should I address you?</small>
+            @if (showError('name')) { <p id="name-error" class="field-error">Please enter at least two meaningful characters for your name.</p> }
+          </div>
+
+          <div class="field">
+            <label for="contact-email">Email address</label>
+            <input id="contact-email" type="email" formControlName="email" autocomplete="email" maxlength="254"
+              [attr.aria-invalid]="showError('email')" aria-describedby="email-hint email-error">
+            <small id="email-hint">Used only in the email draft prepared on your device.</small>
+            @if (showError('email')) { <p id="email-error" class="field-error">Please enter a valid email address.</p> }
+          </div>
+
+          <div class="field">
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" type="text" formControlName="subject" maxlength="120"
+              [attr.aria-invalid]="showError('subject')" aria-describedby="subject-hint subject-error">
+            <small id="subject-hint">A short summary of the conversation.</small>
+            @if (showError('subject')) { <p id="subject-error" class="field-error">Please enter a meaningful subject.</p> }
+          </div>
+
+          <div class="field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" formControlName="message" rows="7" maxlength="2000"
+              [attr.aria-invalid]="showError('message')" aria-describedby="message-hint message-error"></textarea>
+            <small id="message-hint">Please provide at least 20 meaningful characters.</small>
+            @if (showError('message')) { <p id="message-error" class="field-error">Please provide a little more detail in your message.</p> }
+          </div>
+
+          <button class="button button-primary" type="submit">Prepare Email <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="form-status" aria-live="polite">
+          @if (preparedMailto) {
+            <p>Your email draft has been prepared. Review it in your email application before sending.</p>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section next-step-section" appReveal aria-labelledby="next-step-title">
+    <div class="container next-step-card">
+      <p class="eyebrow">Thank you for visiting</p>
+      <h2 id="next-step-title">A useful conversation can be a good next step.</h2>
+      <p>Thank you for taking the time to explore my work and story. I value thoughtful conversations about software, product development and learning.</p>
+      <div class="next-step-links">
+        <a class="button button-secondary" routerLink="/projects">Explore projects</a>
+        <a class="button button-secondary" routerLink="/about">Read my story</a>
+        <a class="button button-secondary" routerLink="/experience">View experience</a>
+      </div>
+    </div>
+  </section>
+</main>

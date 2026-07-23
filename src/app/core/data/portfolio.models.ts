@@ -3,6 +3,14 @@ export interface SocialLink {
   readonly url: string;
 }
 
+export interface ContactMethod {
+  readonly label: string;
+  readonly value: string;
+  readonly url: string;
+  readonly description: string;
+  readonly external: boolean;
+}
+
 export interface PortfolioProject {
   readonly name: string;
   readonly description: string;
