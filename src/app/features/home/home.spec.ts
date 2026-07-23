@@ -57,7 +57,7 @@ describe('Home', () => {
     expect(element.querySelector('a[href="https://github.com/badaDev"]')).toBeTruthy();
   });
 
-  it('renders ShiftPay and intentional coming-soon project states', () => {
+  it('renders ShiftPay and intentional active-development project states', () => {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
     const element = fixture.nativeElement as HTMLElement;
@@ -65,7 +65,9 @@ describe('Home', () => {
 
     expect(image?.getAttribute('loading')).toBe('lazy');
     expect(element.textContent).toContain('ShiftPay Tracker');
-    expect(element.querySelectorAll('.coming-soon-card')).toHaveLength(2);
+    expect(element.querySelectorAll('.development-card')).toHaveLength(2);
+    expect(element.querySelectorAll('.development-visual')).toHaveLength(2);
+    expect(element.textContent).not.toContain('Coming soon');
     expect(element.querySelector('a[href="https://shiftpay-tracker.vercel.app/login"]')?.getAttribute('rel')).toBe('noopener noreferrer');
     expect(element.textContent).not.toContain('Case study');
   });

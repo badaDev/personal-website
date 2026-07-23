@@ -14,7 +14,7 @@ export interface PortfolioProject {
   readonly imageWidth?: number;
   readonly imageHeight?: number;
   readonly caseStudyUrl: string | null;
-  readonly status: 'available' | 'coming-soon';
+  readonly status: 'available' | 'active-development';
   readonly featured: boolean;
 }
 

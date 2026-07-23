@@ -45,7 +45,7 @@ export const PROJECTS: readonly PortfolioProject[] = [
     liveUrl: null,
     repositoryUrl: null,
     caseStudyUrl: null,
-    status: 'coming-soon',
+    status: 'active-development',
     featured: true,
   },
   {
@@ -55,7 +55,7 @@ export const PROJECTS: readonly PortfolioProject[] = [
     liveUrl: null,
     repositoryUrl: null,
     caseStudyUrl: null,
-    status: 'coming-soon',
+    status: 'active-development',
     featured: true,
   },
 ];
