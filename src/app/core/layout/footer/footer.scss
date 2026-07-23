@@ -1,0 +1,32 @@
+footer {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.footer-inner,
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  min-height: 6rem;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-links {
+  gap: 1.25rem;
+}
+
+@media (max-width: 32rem) {
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
