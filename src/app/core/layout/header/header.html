@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" routerLink="/" (click)="closeMenu()" aria-label="Nurudeen Bada, home">
+      <span aria-hidden="true">NB</span>
+    </a>
+
+    <button
+      #menuToggle
+      class="menu-toggle"
+      type="button"
+      [attr.aria-label]="menuOpen() ? 'Close navigation menu' : 'Open navigation menu'"
+      aria-controls="primary-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-navigation" aria-label="Primary navigation" [class.is-open]="menuOpen()">
+      <a routerLink="/" routerLinkActive="active" #homeActive="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }" [attr.aria-current]="homeActive.isActive ? 'page' : null" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" #aboutActive="routerLinkActive" [attr.aria-current]="aboutActive.isActive ? 'page' : null" (click)="closeMenu()">About</a>
+      <a routerLink="/experience" routerLinkActive="active" #experienceActive="routerLinkActive" [attr.aria-current]="experienceActive.isActive ? 'page' : null" (click)="closeMenu()">Experience</a>
+      <a routerLink="/projects" routerLinkActive="active" #projectsActive="routerLinkActive" [attr.aria-current]="projectsActive.isActive ? 'page' : null" (click)="closeMenu()">Projects</a>
+      <a routerLink="/contact" routerLinkActive="active" #contactActive="routerLinkActive" [attr.aria-current]="contactActive.isActive ? 'page' : null" (click)="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,104 @@
+<section class="experience-hero" aria-labelledby="experience-title">
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">Professional experience</p>
+    <h1 id="experience-title">A career shaped by <span>practical product delivery.</span></h1>
+    <p class="lede">My experience spans fintech, SaaS, e-commerce and healthcare-related software, with a consistent focus on clear, dependable frontend engineering.</p>
+    <a class="button button-primary" href="#career-timeline">View career timeline <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<div class="page-content">
+  <section id="career-timeline" class="page-section timeline-section" appReveal aria-labelledby="timeline-title">
+    <div class="container timeline-layout">
+      <app-section-heading
+        eyebrow="Career timeline"
+        heading="Experience, from most recent to earliest."
+        description="A concise record of the companies and roles that have shaped my software engineering career." />
+
+      <ol class="timeline" aria-label="Employment history from most recent to earliest">
+        @for (item of employment; track item.company; let index = $index) {
+          <li class="timeline-entry">
+            <div class="timeline-marker" aria-hidden="true"><span>{{ item.company.charAt(0) }}</span></div>
+            <article>
+              <p class="timeline-index">Role 0{{ index + 1 }}</p>
+              <h2>{{ item.company }}</h2>
+              <p class="role-title">{{ item.role }}</p>
+              <p class="date-range">
+                <time [attr.datetime]="item.startDate">{{ item.startLabel }}</time>
+                <span aria-hidden="true">–</span>
+                @if (item.endDate) {
+                  <time [attr.datetime]="item.endDate">{{ item.endLabel }}</time>
+                } @else {
+                  <span>{{ item.endLabel }}</span>
+                }
+              </p>
+            </article>
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="page-section skills-section" appReveal aria-labelledby="skills-title">
+    <div class="container">
+      <app-section-heading
+        eyebrow="Technology summary"
+        heading="A focused, evolving engineering toolkit."
+        description="Technologies used across frontend delivery and continued full-stack development." />
+
+      <div class="skill-groups">
+        @for (group of technologyGroups; track group.name) {
+          <article class="skill-group" [class.developing-group]="group.status === 'developing'">
+            <div class="group-heading">
+              <h2>{{ group.name }}</h2>
+              @if (group.name === 'Currently expanding') {
+                <span class="progress-label">In Progress</span>
+              }
+            </div>
+            @if (group.description) {
+              <p>{{ group.description }}</p>
+            }
+            <div class="technology-list" [attr.aria-label]="group.name + ' technologies'">
+              @for (technology of group.technologies; track technology) {
+                <app-technology-badge [label]="technology" />
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section development-section" appReveal aria-labelledby="development-title">
+    <div class="container development-layout">
+      <app-section-heading
+        eyebrow="Professional development"
+        heading="Continued learning alongside delivery."
+        description="Focused learning that supports my Angular practice and ongoing backend development." />
+
+      <ul class="development-list" aria-label="Professional development">
+        @for (item of professionalDevelopment; track item.name) {
+          <li>
+            <span>{{ item.name }}</span>
+            @if (item.status) {
+              <strong>{{ item.status }}</strong>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="page-section experience-cta" appReveal aria-labelledby="experience-cta-title">
+    <div class="container cta-card">
+      <p class="eyebrow">Continue the conversation</p>
+      <h2 id="experience-cta-title">Looking for an Angular and TypeScript engineer?</h2>
+      <p>Let’s discuss Software Engineering opportunities, frontend products or full-stack collaboration.</p>
+      <div class="cta-actions">
+        <a class="button button-primary" [href]="'mailto:' + profile.email">Email me <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" routerLink="/projects">View my projects</a>
+      </div>
+    </div>
+  </section>
+</div>

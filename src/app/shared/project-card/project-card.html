@@ -1,0 +1,52 @@
+<article class="project-card" [class.development-card]="project().status === 'active-development'">
+  <div class="project-visual">
+    @if (project().imagePath) {
+      <img
+        [src]="project().imagePath"
+        [alt]="project().imageAlt ?? ''"
+        [width]="project().imageWidth"
+        [height]="project().imageHeight"
+        loading="lazy">
+    } @else {
+      <div class="development-visual" aria-hidden="true">
+        <div class="preview-window">
+          <span class="preview-sidebar"></span>
+          <span class="preview-heading"></span>
+          <span class="preview-panel preview-panel-primary"></span>
+          <span class="preview-panel preview-panel-secondary"></span>
+        </div>
+        <strong>In Active Development</strong>
+      </div>
+    }
+  </div>
+  <div class="project-content">
+    <div class="project-status">{{ project().status === 'active-development' ? 'In Active Development' : 'Available' }}</div>
+    <h3>{{ project().name }}</h3>
+    <p>{{ project().description }}</p>
+
+    @if (project().technologies.length) {
+      <div class="technology-list" aria-label="Technologies used">
+        @for (technology of project().technologies; track technology) {
+          <app-technology-badge [label]="technology" />
+        }
+      </div>
+    }
+
+    @if (project().status === 'active-development') {
+      <div class="project-actions"><span class="unavailable">Preview and project links will be added after release.</span></div>
+    } @else {
+      <div class="project-actions">
+      @if (project().liveUrl) {
+        <a [href]="project().liveUrl" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">↗</span></a>
+      } @else {
+        <span class="unavailable">Live preview unavailable</span>
+      }
+      @if (project().repositoryUrl) {
+        <a [href]="project().repositoryUrl" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      } @else {
+        <span class="unavailable">Repository unavailable</span>
+      }
+      </div>
+    }
+  </div>
+</article>
