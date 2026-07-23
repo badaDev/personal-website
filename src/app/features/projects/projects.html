@@ -1,1 +1,128 @@
-<section class="page-section"><div class="container page-intro"><p class="eyebrow">Projects</p><h1>Selected work</h1><p class="lede">{{ projects.length }} preserved project record is ready for the full projects-page design.</p></div></section>
+<section class="projects-hero" aria-labelledby="projects-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container projects-intro">
+    <p class="eyebrow">Engineering portfolio</p>
+    <h1 id="projects-title">Products built around <span>real-world needs.</span></h1>
+    <p class="lede">These projects demonstrate my work with Angular and TypeScript, alongside full-stack development using Node.js and NestJS.</p>
+    <a class="button button-primary" href="#featured-project">Explore ShiftPay <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<main>
+  <section id="featured-project" class="page-section featured-project" appReveal aria-labelledby="shiftpay-title">
+    <div class="container">
+      <div class="featured-heading">
+        <div>
+          <p class="eyebrow">Featured project</p>
+          <div class="title-row">
+            <h2 id="shiftpay-title">{{ shiftPay.name }}</h2>
+            <span class="status status-available">Available</span>
+          </div>
+          <p class="featured-summary">{{ shiftPay.description }}</p>
+        </div>
+        @if (shiftPay.liveUrl) {
+          <a class="button button-primary" [href]="shiftPay.liveUrl" target="_blank" rel="noopener noreferrer">View live application <span aria-hidden="true">↗</span></a>
+        } @else {
+          <p class="link-status">A public demo is not currently available.</p>
+        }
+      </div>
+
+      <div class="screenshot-gallery" aria-label="ShiftPay Tracker screenshots">
+        @for (screenshot of shiftPay.screenshots; track screenshot.path; let first = $first) {
+          <figure [class.screenshot-primary]="first">
+            <img [src]="screenshot.path" [alt]="screenshot.alt" [width]="screenshot.width" [height]="screenshot.height" loading="lazy">
+          </figure>
+        }
+      </div>
+
+      <div class="project-story">
+        <article>
+          <p class="story-label">The problem</p>
+          <h3>Making complex shifts easier to record and understand</h3>
+          <p>{{ shiftPay.problem }}</p>
+        </article>
+        <article>
+          <p class="story-label">The solution</p>
+          <h3>One clear view of hours and expected pay</h3>
+          <p>{{ shiftPay.description }}</p>
+        </article>
+        <article>
+          <p class="story-label">My role</p>
+          <h3>Full-stack developer</h3>
+          <p>{{ shiftPay.role }}</p>
+        </article>
+      </div>
+
+      <div class="details-layout">
+        <div class="feature-panel">
+          <h3>Key features</h3>
+          <ul>
+            @for (feature of shiftPay.features; track feature) {
+              <li><span aria-hidden="true">✓</span>{{ feature }}</li>
+            }
+          </ul>
+        </div>
+        <div class="stack-panel">
+          <h3>Technology stack</h3>
+          <div class="technology-list" aria-label="ShiftPay technologies">
+            @for (technology of shiftPay.technologies; track technology) {
+              <app-technology-badge [label]="technology" />
+            }
+          </div>
+          @if (!shiftPay.repositoryUrl) {
+            <p class="link-status">Source repository is not publicly available.</p>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section development-section" appReveal aria-labelledby="development-title">
+    <div class="container">
+      <app-section-heading
+        eyebrow="In Active Development"
+        heading="Products currently taking shape."
+        description="These applications are being designed and developed iteratively. Features are labelled as planned or in development until release." />
+
+      <div class="development-list">
+        @for (project of activeProjects; track project.name) {
+          <article class="development-entry">
+            <app-project-card [project]="project" />
+            @if (project.role || project.features?.length) {
+              <div class="development-details">
+                @if (project.role) {
+                  <div>
+                    <p class="story-label">My role</p>
+                    <p>{{ project.role }}</p>
+                  </div>
+                }
+                @if (project.features?.length) {
+                  <div>
+                    <p class="story-label">Planned or in development</p>
+                    <ul>
+                      @for (feature of project.features; track feature) {
+                        <li>{{ feature }}</li>
+                      }
+                    </ul>
+                  </div>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section projects-cta" appReveal aria-labelledby="projects-cta-title">
+    <div class="container cta-panel">
+      <p class="eyebrow">Start a conversation</p>
+      <h2 id="projects-cta-title">Have a product challenge worth solving?</h2>
+      <p>I’m interested in Software Engineering opportunities, Angular projects and thoughtful full-stack collaborations.</p>
+      <div class="cta-actions">
+        <a class="button button-primary" [href]="'mailto:' + profile.email">Email me <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" routerLink="/contact">Contact page</a>
+      </div>
+    </div>
+  </section>
+</main>

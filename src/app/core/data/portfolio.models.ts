@@ -16,6 +16,17 @@ export interface PortfolioProject {
   readonly caseStudyUrl: string | null;
   readonly status: 'available' | 'active-development';
   readonly featured: boolean;
+  readonly role?: string;
+  readonly problem?: string;
+  readonly features?: readonly string[];
+  readonly screenshots?: readonly ProjectScreenshot[];
+}
+
+export interface ProjectScreenshot {
+  readonly path: string;
+  readonly alt: string;
+  readonly width: number;
+  readonly height: number;
 }
 
 export interface PortfolioProfile {
